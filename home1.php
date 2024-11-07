@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/contacts/contact-5/assets/css/contact-5.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
   <style>
           /* about section */
-      .about-section {
+      /* .about-section {
         padding: 40px 20px;
         border-radius: 10px;
         margin-top: 20px;
@@ -36,28 +38,38 @@
     .links-white :is(a, li a) {
       color: white !important;
       text-decoration: none;
-    }
+    } */
     /* jumbotron section */
-    .btn-custom:hover {
-    background-color: #027ed6; /* Ubah warna background saat hover */
-    border-color: #027ed6; /* Ubah warna border saat hover */
-    color: white; /* Ubah warna teks saat hover */
-  }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* Menghilangkan ikon panah default */
+  width: 40px; /* Ukuran lebar tombol */
+  height: 40px; /* Ukuran tinggi tombol */
+  background-color: black; /* Ganti warna ini sesuai selera */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .btn-masuk {
-    background-color: #007bff; /* Warna tombol */
-    border-color: #007bff; /* Warna border tombol */
-    color: white; /* Warna teks tombol */
-    font-size: 1rem; /* Ubah ukuran font tombol */
-    padding: 10px 20px; /* Ubah padding tombol */
-    border-radius: 5px; /* Ubah radius border tombol */
-  }
+/* Menambahkan ikon panah Font Awesome pada tombol prev dan next */
+.carousel-control-prev-icon::before {
+  content: '\f053'; /* Icon panah kiri dari Font Awesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white; /* Warna ikon panah */
+  font-size: 20px; /* Ukuran ikon */
+}
 
-  .btn-masuk:hover {
-    background-color: #7fbde9; /* Ubah warna background saat hover */
-    border-color: #027ed6; /* Ubah warna border saat hover */
-    color: white; /* Ubah warna teks saat hover */
-  }
+.carousel-control-next-icon::before {
+  content: '\f054'; /* Icon panah kanan dari Font Awesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white; /* Warna ikon panah */
+  font-size: 20px; /* Ukuran ikon */
+}
+
+
 
   /* style buat profile */
 
@@ -118,41 +130,65 @@
 
 <!-- Jumbotron Section -->
 <!-- Jumbotron -->
-<div class="p-5 text-center bg-image rounded-3  w-80 mx-auto" style="
-    background-image: url('https://i.pinimg.com/564x/51/57/9a/51579ab90620cb36fb8592b19cd4280f.jpg');
-    background-size: cover; background-position: center;
-    height: 500px; margin-top: 70px; box-shadow: #555;
-  ">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">AYO PEDULI</h1>
-        <h4 class="mb-3">Satu tindakan kebaikan dapat mengubah jalan hidup seseorang.<br>
-            Mari bersama-sama hadir untuk mereka yang paling membutuhkan.</h4>
-        <a data-mdb-ripple-init class="btn btn-outline-light btn-lg btn-custom" href="#!" role="button">DONATE NOW</a>
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" style="width: auto; height:1000px;">
+    <div class="carousel-item active">
+      <img src="https://i.pinimg.com/564x/1f/a2/5d/1fa25d123ad4e83d31bc694a9620e8b3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/65/79/20/65792095bca800563b7a66b9e6cc4e02.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/b3/a3/2b/b3a32bf4b19c3e620a01778b203d6840.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #1A1A19;"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 <!-- Jumbotron -->
     <!-- About Section -->
-     <p id="about"></p>
-    <div class="container about-section bg-light" style="margin-top: 90px;">
-      <div class="row">
-          <div class="col-md-6 shadow-sm">
-            <img
-            src="https://i.pinimg.com/564x/29/28/5f/29285f907626ba790fa80ec565fa6143.jpg"
-            class="about-image"
-            alt="About Us Image"
-            />
-          </div>
-          <div class="col-md-6">
-            <h2 class="about-title">About Us</h2>
-            <p class="about-description">
-              Peduli Rakyat adalah sebuah gerakan sosial yang berfokus pada peningkatan kesejahteraan masyarakat melalui donasi dan aksi nyata. Kami percaya bahwa setiap individu berhak mendapatkan kehidupan yang layak, tanpa terkecuali. Dengan semangat kebersamaan dan gotong royong, kami mengajak seluruh lapisan masyarakat untuk turut berkontribusi dalam membantu mereka yang membutuhkan.
-            </p>
-          </div>
-        </div>
-      </div>
+    <section class="py-5 mt-5">
+<div class="p-3" style="background-color: #E4E0E1;" >
+  <div class="container">
+    <div class="row gx-4 align-items-center">
+      <div class="col-md-6">
+				<div class="me-md-2 me-lg-5"><img class="img-fluid rounded-3" src="https://freefrontend.dev/assets/square.png"></div>
+			</div>
+			<div class="col-md-6">
+				<div class="ms-md-2 ms-lg-5 mt-5 mt-md-0">
+					<span class="text-muted">Our Story</span>
+					<h2 class="display-5 fw-bold">About Us</h2>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="lead">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p><a class="btn btn-primary" href="#">Learn more</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
     <!-- Misi Organisasi -->
     <section class="mission text-center">
       <div class="container" style="margin-top: 110px;">
