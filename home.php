@@ -104,7 +104,7 @@
             <a class="nav-link" href="#about">test ganti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="#contact">hatsune</a>
           </li>
           <!-- Tambahkan tombol Masuk dan Daftar di sini -->
           <li class="nav-item">
