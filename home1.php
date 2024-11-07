@@ -104,29 +104,14 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="donasi.html">Donasi</a>
+          <a class="nav-link" href="donasi.php">Donasi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
-        </li>
-              <!-- Profile Dropdown -->
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://via.placeholder.com/30" alt="Profile" class="rounded-circle" width="30" height="30">
-            <!-- Nama User -->
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="profileDropdown">
-            <li><a class="dropdown-item" href="#">Profil Saya</a></li>
-            <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
+       </li>
     </div>
   </div>
 </nav>
