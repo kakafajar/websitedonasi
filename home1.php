@@ -14,91 +14,15 @@
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/contacts/contact-5/assets/css/contact-5.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+<link rel="stylesheet" href="style.css">
   </head>
   <style>
-          /* about section */
-      /* .about-section {
-        padding: 40px 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-      .about-title {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      .about-description {
-        font-size: 1.2rem;
-        color: #555;
-      }
-      .about-image {
-        width: 100%;
-        border-radius: 10px;
-      }
-    .links-white :is(a, li a) {
-      color: white !important;
-      text-decoration: none;
-    } */
-    /* jumbotron section */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-image: none; /* Menghilangkan ikon panah default */
-  width: 40px; /* Ukuran lebar tombol */
-  height: 40px; /* Ukuran tinggi tombol */
-  background-color: black; /* Ganti warna ini sesuai selera */
-  border-radius: 50%; /* Membuat tombol berbentuk bulat */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Menambahkan ikon panah Font Awesome pada tombol prev dan next */
-.carousel-control-prev-icon::before {
-  content: '\f053'; /* Icon panah kiri dari Font Awesome */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: white; /* Warna ikon panah */
-  font-size: 20px; /* Ukuran ikon */
-}
-
-.carousel-control-next-icon::before {
-  content: '\f054'; /* Icon panah kanan dari Font Awesome */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: white; /* Warna ikon panah */
-  font-size: 20px; /* Ukuran ikon */
-}
-
-
-
-  /* style buat profile */
-
-  .custom-dropdown {
-    background-color: #1A1A19;
-    border-radius: 8px;
-  }
-  /* Mengubah warna teks dropdown */
-  .custom-dropdown .dropdown-item {
-    color: black; /* Warna teks */
-  }
- /* Mengubah warna saat item dropdown di-hover */
- .custom-dropdown .dropdown-item:hover {
-    background-color: #555; /* Warna latar belakang saat di-hover */
-    color: #fff; /* Warna teks saat di-hover */
-    cursor: pointer; /* Cursor saat di-hover */
-    border-radius: 20px;
-  }
-
-  /* Mengubah warna garis pembatas */
-  .custom-dropdown .dropdown-divider {
-    border-color: #444; /* Warna pembatas */
-  }
   </style>
   <body>
     <!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #3C552D;">
   <div class="container links-white">
-    <a class="" href="#">Peduli Rakyat</a>
+    <a class="" href="#">Saung Do'a Anak Yatim </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -116,14 +40,20 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="donasi.php">Donasi</a>
+          <a class="nav-link" href="tentang.php">tentang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#about">Program</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kegiatan.php">kegiatan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
-       </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="donasi.php">Donasi</a>
+        </li>
     </div>
   </div>
 </nav>
@@ -141,21 +71,18 @@
       <img src="https://i.pinimg.com/564x/1f/a2/5d/1fa25d123ad4e83d31bc694a9620e8b3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://i.pinimg.com/564x/65/79/20/65792095bca800563b7a66b9e6cc4e02.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://i.pinimg.com/564x/b3/a3/2b/b3a32bf4b19c3e620a01778b203d6840.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
   </div>
@@ -170,7 +97,7 @@
 </div>
 <!-- Jumbotron -->
     <!-- About Section -->
-    <section class="py-5 mt-5">
+    <section class="py-5 mt-5" id="about">
 <div class="p-3" style="background-color: #E4E0E1;" >
   <div class="container">
     <div class="row gx-4 align-items-center">
@@ -192,113 +119,59 @@
     <!-- Misi Organisasi -->
     <section class="mission text-center">
       <div class="container" style="margin-top: 110px;">
-        <h2 class="mb-4">Misi Kami</h2>
+        <h2 class="mb-4">visi misi</h2>
         <p class="lead">
           Kami percaya bahwa setiap orang memiliki hak untuk hidup yang lebih
           baik. Misi kami adalah membantu mereka yang paling membutuhkan dengan
           memberikan akses ke pendidikan, kesehatan, dan bantuan darurat.
         </p>
-
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Pendidikan</h4>
-              <p>
-                Meningkatkan akses pendidikan untuk anak-anak di daerah
-                terpencil.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Kesehatan</h4>
-              <p>
-                Menyediakan layanan kesehatan dan akses air bersih untuk
-                komunitas yang kurang terlayani.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Bantuan Darurat</h4>
-              <p>
-                Memberikan bantuan darurat kepada korban bencana alam di
-                berbagai wilayah.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="sustainable-donation text-center py-5" id="donasi">
-      <div class="container" style="margin-top: 20px;">
-        <h2 class="mb-5">Donasi Berkelanjutan</h2>
-
-        <div
-          id="donationCarousel"
-          class="carousel slide w-75 mx-auto"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <img
-                src="https://i.pinimg.com/564x/37/48/a5/3748a5583cf64bc5cf504a2100eb1a31.jpg"
-                class="d-block w-100"
-                alt="Donasi Pendidikan"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Pendidikan</h5>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <img
-                src="https://i.pinimg.com/564x/69/e4/10/69e4108c93faf43faa209340d3903730.jpg"
-                class="d-block w-100"
-                alt="Donasi Kesehatan"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Kesehatan</h5>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-              <img
-                src="https://i.pinimg.com/564x/ed/2d/ed/ed2ded218b6bb2f73249b15c337b8616.jpg"
-                class="d-block w-100"
-                alt="Donasi Bencana Alam"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Bencana Alam</h5>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#donationCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#donationCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+<div class="container py-5" style="margin-top: 100px;">
+  <h1 class="text-center mb-5">Program Saung Do'a Anak Yatim Dhuafa</h1>
+  <div class="row g-4">
+    
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 1">
+        <div class="card-body">
+          <h5 class="card-title">Program Bantuan Pendidikan</h5>
+          <p class="card-text">Memberikan bantuan pendidikan bagi anak-anak di daerah terpencil untuk mencapai cita-citanya.</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
         </div>
       </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 2">
+        <div class="card-body">
+          <h5 class="card-title">Program Kesehatan Gratis</h5>
+          <p class="card-text">Menjalankan layanan kesehatan gratis untuk masyarakat kurang mampu di pedesaan.</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 3">
+        <div class="card-body">
+          <h5 class="card-title">Program Pemberdayaan UMKM</h5>
+          <p class="card-text">Mendukung UMKM lokal melalui pelatihan dan bantuan modal usaha.</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
+        </div>
+      </div>
+      <!-- Tombol Learn More di luar card -->
+    </div>
+  </div>
+  <!-- <a href="halaman_utama_program.html" class="btn btn-learn-more">Learn More</a> -->
+</div>
+
 
 
   <!-- Contact Section-->
