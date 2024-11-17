@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/contacts/contact-5/assets/css/contact-5.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles.css">
   </head>
   <style>
   </style>
@@ -135,10 +135,10 @@
     <!-- Card 1 -->
     <div class="col-md-4">
       <div class="card program-card">
-        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 1">
+        <img src="img/program.jpg" class="card-img-top" alt="Program 1">
         <div class="card-body">
-          <h5 class="card-title">Program Bantuan Pendidikan</h5>
-          <p class="card-text">Memberikan bantuan pendidikan bagi anak-anak di daerah terpencil untuk mencapai cita-citanya.</p>
+          <h5 class="card-title">Program lelang wakaf </h5>
+          <p class="card-text">untuk pembangunan ponpes tahfidz kampoeng Quran</p>
           <a href="#" class="btn btn-custom w-100">Lihat Program</a>
         </div>
       </div>
@@ -147,10 +147,10 @@
     <!-- Card 2 -->
     <div class="col-md-4">
       <div class="card program-card">
-        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 2">
+        <img src="img/program2.jpg" class="card-img-top" alt="Program 2">
         <div class="card-body">
-          <h5 class="card-title">Program Kesehatan Gratis</h5>
-          <p class="card-text">Menjalankan layanan kesehatan gratis untuk masyarakat kurang mampu di pedesaan.</p>
+          <h5 class="card-title">Program Agenda Mingguan</h5>
+          <p class="card-text">Doa Bersama Setiap Jum'at sore</p>
           <a href="#" class="btn btn-custom w-100">Lihat Program</a>
         </div>
       </div>
@@ -159,10 +159,10 @@
     <!-- Card 3 -->
     <div class="col-md-4">
       <div class="card program-card">
-        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Program 3">
+        <img src="img/program3.jpg" class="card-img-top" alt="Program 3">
         <div class="card-body">
-          <h5 class="card-title">Program Pemberdayaan UMKM</h5>
-          <p class="card-text">Mendukung UMKM lokal melalui pelatihan dan bantuan modal usaha.</p>
+          <h5 class="card-title">Agenda Tahunan</h5>
+          <p class="card-text">Berbagi bersama para jompo dan dhuafa</p>
           <a href="#" class="btn btn-custom w-100">Lihat Program</a>
         </div>
       </div>

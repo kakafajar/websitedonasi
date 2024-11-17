@@ -9,12 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="styles.css">
     <title></title>
-
     <style>
-    </style>
+  </style>
   </head>
   <body>
       <!-- Navbar Section -->
@@ -62,8 +60,8 @@
   </header>
   <section class="content-section-tn">
     <section class="py-5 mt-5" id="about">
-    <div class="p-3" style="background-color: #E4E0E1;" >
-    <div class="container">
+    <div class="p-3">
+    <div class="container-fluid">
         <div class="row gx-4 align-items-center">
         <div class="col-md-6">
                     <div class="me-md-2 me-lg-5"><img class="img-fluid rounded-3" src="https://freefrontend.dev/assets/square.png"></div>
@@ -71,8 +69,8 @@
                 <div class="col-md-6">
                     <div class="ms-md-2 ms-lg-5 mt-5 mt-md-0">
                         <span class="text-muted">Our Story</span>
-                        <h2 class="display-5 fw-bold">About Us</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h2 class="display-5 fw-bold">Tentang Pesantren</h2>
+                        <p class="lead">Pondok</p>
                         <p class="lead">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
                     </div>
                 </div>
@@ -81,7 +79,69 @@
     </div>
     </section>
 
+    <!-- Section Visi Misi dan Tujuan -->
+    <section class="py-5 bg-light" id="vision-mission">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Visi dan Misi</h2>
+          <p class="text-muted">Komitmen kami untuk memberikan dampak positif</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 text-center mb-4">
+            <div class="p-4 bg-white shadow rounded h-100">
+              <h3 class="fw-bold">Visi</h3>
+              <p>Menciptakan generasi muda yang cerdas, berakhlak mulia, dan mandiri.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div class="p-4 bg-white shadow rounded h-100">
+              <h3 class="fw-bold">Misi</h3>
+              <p>Memberikan pendidikan berkualitas, mendukung kesejahteraan anak yatim, dan menyebarkan nilai-nilai kebaikan.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div class="p-4 bg-white shadow rounded h-100">
+              <h3 class="fw-bold">Tujuan</h3>
+              <p>Meningkatkan kualitas hidup anak-anak kurang beruntung melalui pendidikan dan dukungan spiritual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Our Team -->
+    <section class="py-5" id="our-team">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Team</h2>
+      <p class="text-muted">Mereka yang berdedikasi untuk tujuan mulia</p>
     </div>
+    <div class="row">
+      <div class="col-md-4 text-center mb-4">
+        <div class="team-member card border-0 shadow-sm p-3">
+          <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Team Member 1">
+          <h5 class="fw-bold">Nama Anggota 1</h5>
+          <p class="text-muted">Founder</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div class="team-member card border-0 shadow-sm p-3">
+          <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Team Member 2">
+          <h5 class="fw-bold">Nama Anggota 2</h5>
+          <p class="text-muted">Co-Founder</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div class="team-member card border-0 shadow-sm p-3">
+          <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Team Member 3">
+          <h5 class="fw-bold">Nama Anggota 3</h5>
+          <p class="text-muted">Volunteer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   </section>
   <!-- end header -->
   

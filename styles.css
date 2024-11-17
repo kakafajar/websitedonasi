@@ -26,8 +26,8 @@ transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan animasi 
     transform: scale(1.05);
   }
   .card-img-top {
-    height: 200px;
-    object-fit: cover;
+    /* height: 200px;
+    object-fit: cover; */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
@@ -168,10 +168,48 @@ font-size: 20px; /* Ukuran ikon */
   .content-section-tn {
     min-height: 100vh;
     padding: 40px;
-    background-color:#ffff;
+    background-color: #fff;
     text-align: center;
   }
-  
+ /* Efek hover untuk setiap anggota tim */
+.team-member {
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar anggota tim berbentuk kotak */
+.team-member img {
+  border-radius: 20px; /* Tidak ada sudut bulat */
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.team-member:hover img {
+  transform: scale(1.1); /* Zoom pada hover */
+  filter: brightness(1.2); /* Lebih cerah saat hover */
+}
+
+/* Animasi teks pada hover */
+.team-member h5,
+.team-member p {
+  transition: color 0.3s ease-in-out;
+}
+
+.team-member:hover h5 {
+  color: #3C552D;
+}
+
+.team-member:hover p {
+  color: #6c757d;
+}
+
+
+
 
   /* gallery */
 
