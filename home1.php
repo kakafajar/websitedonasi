@@ -13,80 +13,16 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/contacts/contact-5/assets/css/contact-5.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
   </head>
   <style>
-          /* about section */
-      .about-section {
-        padding: 40px 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-      .about-title {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      .about-description {
-        font-size: 1.2rem;
-        color: #555;
-      }
-      .about-image {
-        width: 100%;
-        border-radius: 10px;
-      }
-    .links-white :is(a, li a) {
-      color: white !important;
-      text-decoration: none;
-    }
-    /* jumbotron section */
-    .btn-custom:hover {
-    background-color: #027ed6; /* Ubah warna background saat hover */
-    border-color: #027ed6; /* Ubah warna border saat hover */
-    color: white; /* Ubah warna teks saat hover */
-  }
-
-  .btn-masuk {
-    background-color: #007bff; /* Warna tombol */
-    border-color: #007bff; /* Warna border tombol */
-    color: white; /* Warna teks tombol */
-    font-size: 1rem; /* Ubah ukuran font tombol */
-    padding: 10px 20px; /* Ubah padding tombol */
-    border-radius: 5px; /* Ubah radius border tombol */
-  }
-
-  .btn-masuk:hover {
-    background-color: #7fbde9; /* Ubah warna background saat hover */
-    border-color: #027ed6; /* Ubah warna border saat hover */
-    color: white; /* Ubah warna teks saat hover */
-  }
-
-  /* style buat profile */
-
-  .custom-dropdown {
-    background-color: #1A1A19;
-    border-radius: 8px;
-  }
-  /* Mengubah warna teks dropdown */
-  .custom-dropdown .dropdown-item {
-    color: black; /* Warna teks */
-  }
- /* Mengubah warna saat item dropdown di-hover */
- .custom-dropdown .dropdown-item:hover {
-    background-color: #555; /* Warna latar belakang saat di-hover */
-    color: #fff; /* Warna teks saat di-hover */
-    cursor: pointer; /* Cursor saat di-hover */
-    border-radius: 20px;
-  }
-
-  /* Mengubah warna garis pembatas */
-  .custom-dropdown .dropdown-divider {
-    border-color: #444; /* Warna pembatas */
-  }
   </style>
   <body>
     <!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #3C552D;">
   <div class="container links-white">
-    <a class="" href="#">Peduli Rakyat</a>
+    <a class="" href="#">Saung Do'a Anak Yatim </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -104,165 +40,138 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="donasi.php">Donasi</a>
+          <a class="nav-link" href="tentang.php">tentang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#about">Program</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kegiatan.php">kegiatan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
-       </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="donasi.php">Donasi</a>
+        </li>
     </div>
   </div>
 </nav>
 
 <!-- Jumbotron Section -->
 <!-- Jumbotron -->
-<div class="p-5 text-center bg-image rounded-3  w-80 mx-auto" style="
-    background-image: url('https://i.pinimg.com/564x/51/57/9a/51579ab90620cb36fb8592b19cd4280f.jpg');
-    background-size: cover; background-position: center;
-    height: 500px; margin-top: 70px; box-shadow: #555;
-  ">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">AYO PEDULI</h1>
-        <h4 class="mb-3">Satu tindakan kebaikan dapat mengubah jalan hidup seseorang.<br>
-            Mari bersama-sama hadir untuk mereka yang paling membutuhkan.</h4>
-        <a data-mdb-ripple-init class="btn btn-outline-light btn-lg btn-custom" href="#!" role="button">DONATE NOW</a>
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" style="width: auto; height:1000px;">
+    <div class="carousel-item active">
+      <img src="https://i.pinimg.com/564x/1f/a2/5d/1fa25d123ad4e83d31bc694a9620e8b3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/65/79/20/65792095bca800563b7a66b9e6cc4e02.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/b3/a3/2b/b3a32bf4b19c3e620a01778b203d6840.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
       </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #1A1A19;"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 <!-- Jumbotron -->
     <!-- About Section -->
-     <p id="about"></p>
-    <div class="container about-section bg-light" style="margin-top: 90px;">
-      <div class="row">
-          <div class="col-md-6 shadow-sm">
-            <img
-            src="https://i.pinimg.com/564x/29/28/5f/29285f907626ba790fa80ec565fa6143.jpg"
-            class="about-image"
-            alt="About Us Image"
-            />
-          </div>
-          <div class="col-md-6">
-            <h2 class="about-title">About Us</h2>
-            <p class="about-description">
-              Peduli Rakyat adalah sebuah gerakan sosial yang berfokus pada peningkatan kesejahteraan masyarakat melalui donasi dan aksi nyata. Kami percaya bahwa setiap individu berhak mendapatkan kehidupan yang layak, tanpa terkecuali. Dengan semangat kebersamaan dan gotong royong, kami mengajak seluruh lapisan masyarakat untuk turut berkontribusi dalam membantu mereka yang membutuhkan.
-            </p>
-          </div>
-        </div>
-      </div>
+    <section class="py-5 mt-5" id="about">
+<div class="p-3" style="background-color: #E4E0E1;" >
+  <div class="container">
+    <div class="row gx-4 align-items-center">
+      <div class="col-md-6">
+				<div class="me-md-2 me-lg-5"><img class="img-fluid rounded-3" src="https://freefrontend.dev/assets/square.png"></div>
+			</div>
+			<div class="col-md-6">
+				<div class="ms-md-2 ms-lg-5 mt-5 mt-md-0">
+					<span class="text-muted">Our Story</span>
+					<h2 class="display-5 fw-bold">About Us</h2>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="lead">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p><a class="btn btn-primary" href="#">Learn more</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
     <!-- Misi Organisasi -->
     <section class="mission text-center">
       <div class="container" style="margin-top: 110px;">
-        <h2 class="mb-4">Misi Kami</h2>
+        <h2 class="mb-4">visi misi</h2>
         <p class="lead">
           Kami percaya bahwa setiap orang memiliki hak untuk hidup yang lebih
           baik. Misi kami adalah membantu mereka yang paling membutuhkan dengan
           memberikan akses ke pendidikan, kesehatan, dan bantuan darurat.
         </p>
-
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Pendidikan</h4>
-              <p>
-                Meningkatkan akses pendidikan untuk anak-anak di daerah
-                terpencil.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Kesehatan</h4>
-              <p>
-                Menyediakan layanan kesehatan dan akses air bersih untuk
-                komunitas yang kurang terlayani.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card shadow p-4">
-              <h4>Bantuan Darurat</h4>
-              <p>
-                Memberikan bantuan darurat kepada korban bencana alam di
-                berbagai wilayah.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="sustainable-donation text-center py-5" id="donasi">
-      <div class="container" style="margin-top: 20px;">
-        <h2 class="mb-5">Donasi Berkelanjutan</h2>
-
-        <div
-          id="donationCarousel"
-          class="carousel slide w-75 mx-auto"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <img
-                src="https://i.pinimg.com/564x/37/48/a5/3748a5583cf64bc5cf504a2100eb1a31.jpg"
-                class="d-block w-100"
-                alt="Donasi Pendidikan"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Pendidikan</h5>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <img
-                src="https://i.pinimg.com/564x/69/e4/10/69e4108c93faf43faa209340d3903730.jpg"
-                class="d-block w-100"
-                alt="Donasi Kesehatan"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Kesehatan</h5>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-              <img
-                src="https://i.pinimg.com/564x/ed/2d/ed/ed2ded218b6bb2f73249b15c337b8616.jpg"
-                class="d-block w-100"
-                alt="Donasi Bencana Alam"
-              />
-              <div class="carousel-caption">
-                <h5>Donasi Bencana Alam</h5>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#donationCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#donationCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+<div class="container py-5" style="margin-top: 100px;">
+  <h1 class="text-center mb-5">Program Saung Do'a Anak Yatim Dhuafa</h1>
+  <div class="row g-4">
+    
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="img/program.jpg" class="card-img-top" alt="Program 1">
+        <div class="card-body">
+          <h5 class="card-title">Program lelang wakaf </h5>
+          <p class="card-text">untuk pembangunan ponpes tahfidz kampoeng Quran</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
         </div>
       </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="img/program2.jpg" class="card-img-top" alt="Program 2">
+        <div class="card-body">
+          <h5 class="card-title">Program Agenda Mingguan</h5>
+          <p class="card-text">Doa Bersama Setiap Jum'at sore</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card program-card">
+        <img src="img/program3.jpg" class="card-img-top" alt="Program 3">
+        <div class="card-body">
+          <h5 class="card-title">Agenda Tahunan</h5>
+          <p class="card-text">Berbagi bersama para jompo dan dhuafa</p>
+          <a href="#" class="btn btn-custom w-100">Lihat Program</a>
+        </div>
+      </div>
+      <!-- Tombol Learn More di luar card -->
+    </div>
+  </div>
+  <!-- <a href="halaman_utama_program.html" class="btn btn-learn-more">Learn More</a> -->
+</div>
+
 
 
   <!-- Contact Section-->
