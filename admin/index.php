@@ -85,6 +85,12 @@
     </div>
 </section>
 <?php
+    session_start();
+
+    if (! isset($_SESSION["user"])){
+        header("Location: login.php");
+    }
+
     $title = "Dashboard";
 
     require_once 'layout.php';

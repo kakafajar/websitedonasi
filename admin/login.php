@@ -1,3 +1,25 @@
+<?php 
+    require_once 'models/user.php';
+
+    $errormsg = "";
+
+    if (isset($_POST['username'])){
+        $users = User::get_all();
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        foreach ($users as $user){
+            if ( $username == $user->get_username() && password_verify($password, $user->get_password()) ){
+                $_SESSION['user'] = $user;
+
+                header("Location: index.php");
+                $errormsg = "benar";
+                exit;
+            }
+        }
+        $errormsg = "salah";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,13 +42,14 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form action="" method="post">
+                                            <label><?= $errormsg ?></label>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                                <label for="inputEmail">Username</label>
+                                                <input class="form-control" id="inputUsername" name="username" type="text" placeholder="name" />
+                                                <label for="inputUsername">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -35,7 +58,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.html">Login</a>
+                                                <button type="submit" class="btn btn-primary">Login</a>
                                             </div>
                                         </form>
                                     </div>
