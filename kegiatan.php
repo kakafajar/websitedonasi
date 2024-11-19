@@ -14,13 +14,27 @@
     <title></title>
 
     <style>
+
+      /* gallery */
+      .gallery-img {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0.9;
+      }
+
+      .gallery-img:hover {
+        transform: scale(1.1); /* Zoom-in effect */
+        opacity: 1; /* Gambar lebih terang */
+        cursor: pointer; /* Mengubah kursor menjadi tangan */
+      }
+
+
     </style>
   </head>
   <body>
       <!-- Navbar Section -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #3C552D;">
   <div class="container links-white">
-    <a class="" href="#">Saung Do'a Anak Yatim </a>
+  <a class="Logo" href="#"><img src="img/logo.png" alt="logo" style="width: 70px;"></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -35,7 +49,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto links-white">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home1.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="tentang.php">tentang</a>
@@ -61,6 +75,34 @@
     <h1>KEGIATAN</h1>
   </header>
   <section class="content-section">
+    <!-- Gallery Section -->
+    <section class="gallery-section py-5" id="gallery">
+      <div class="container">
+        <h2 class="text-center mb-4">Galeri Kegiatan</h2>
+        <div class="row g-3">
+          <!-- Image 1 -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="img/kegiatan1.jpg" data-lightbox="gallery" data-title="Kegiatan 1">
+              <img src="img/kegiatan1.jpg" alt="Kegiatan 1" class="img-fluid gallery-img">
+            </a>
+          </div>
+          <!-- Image 2 -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="img/kegiatan2.jpg" data-lightbox="gallery" data-title="Kegiatan 2">
+              <img src="img/kegiatan2.jpg" alt="Kegiatan 2" class="img-fluid gallery-img">
+            </a>
+          </div>
+          <!-- Image 3 -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="img/kegiatan3.jpg" data-lightbox="gallery" data-title="Kegiatan 3">
+              <img src="img/kegiatan3.jpg" alt="Kegiatan 3" class="img-fluid gallery-img">
+            </a>
+          </div>
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </section>
+
   </section>
   <!-- end header -->
   

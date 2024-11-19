@@ -18,7 +18,7 @@
       <!-- Navbar Section -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #3C552D;">
   <div class="container links-white">
-    <a class="" href="#">Saung Do'a Anak Yatim </a>
+  <a class="Logo" href="#"><img src="img/logo.png" alt="logo" style="width: 70px;"></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto links-white">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home1.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="tentang.php">tentang</a>
