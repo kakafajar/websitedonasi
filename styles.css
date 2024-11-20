@@ -209,10 +209,22 @@ font-size: 20px; /* Ukuran ikon */
 }
 
 
-
-
   /* gallery */
+  .gallery-img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+  }
 
+  .gallery-img:hover {
+    transform: scale(1.1); /* Zoom-in effect */
+    opacity: 1; /* Gambar lebih terang */
+    cursor: pointer; /* Mengubah kursor menjadi tangan */
+  }
+
+
+
+
+  
   
   
   
