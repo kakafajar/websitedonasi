@@ -16,33 +16,50 @@ background-color: #28a745; /* Warna hijau untuk hover */
 color: #fff; /* Warna teks pada hover */
 transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan animasi */
 }
- /* Styling tambahan untuk card */
- .program-card {
-    transition: transform 0.3s ease;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .program-card:hover {
-    transform: scale(1.05);
-  }
-  .card-img-top {
-    /* height: 200px;
-    object-fit: cover; */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  .card-title {
-    font-weight: bold;
-    color: #006400; /* Hijau tua */
-  }
-  .btn-custom {
-    background-color: #28a745;
-    color: #fff;
-    transition: background-color 0.3s;
-  }
-  .btn-custom:hover {
-    background-color: #218838;
-  }
+/* Ukuran tetap untuk card */
+.program-card {
+  height: 600px; /* Tinggi tetap */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Atur gambar agar tidak memengaruhi ukuran card */
+.program-card .card-img-top {
+  height: 350px; /* Tinggi tetap untuk gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  width: 360px; /* Sesuaikan lebar gambar dengan card */
+}
+
+/* Atur teks dan tombol agar berada di bawah */
+.program-card .card-body {
+  padding: 50px;
+  text-align: center;
+}
+
+.program-card h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.btn-custom {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #287e3c;
+}
+
 
   /* jumbotron section */
 .carousel-control-prev-icon,

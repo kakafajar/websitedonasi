@@ -1,5 +1,5 @@
 AOS.init({
-    duration: 2000, // Durasi animasi dalam milidetik
+    duration: 1500, // Durasi animasi dalam milidetik
     once: true // Animasi hanya berjalan sekali
   });
 
