@@ -16,6 +16,17 @@
             $this->role=$role;
         }
 
+
+        public static function from_array($array){
+            return new User(
+                $array[0],
+                $array[1],
+                $array[2],
+                $array[3]
+            );
+        }
+
+
         function get_id(){
             return $this->id;
         }
@@ -34,16 +45,14 @@
 
 
         public static function get($id){
+            global $conn;
             $user = null;
-            if ($result -> $conn->query("SELECT * FROM users WHERE id=$id")){
+
+            $result = $conn->query("SELECT * FROM users WHERE id=$id");
+            if ($result->num_rows > 0){
                 $rawdata = $result->fetch_all();
 
-                $user = new User(
-                    $rawdata['id'],
-                    $rawdata['username'],
-                    $rawdata['password'],
-                    $rawdata['role']
-                );
+                $user = User::from_array($rawdata);
             }
 
             return $user;
@@ -53,16 +62,13 @@
         public static function get_all(){
             global $conn;
             $users = null;
-            if ($result = $conn->query("SELECT * FROM users")){
+
+            $result = $conn->query("SELECT * FROM users");
+            if ($result->num_rows > 0){
                 $rawdatas = $result->fetch_all();
                 
                 foreach ($rawdatas as $rawdata){
-                    $users[] = new User(
-                        $rawdata[0],
-                        $rawdata[1],
-                        $rawdata[2],
-                        $rawdata[3]
-                    );
+                    $users[] = User::from_array($rawdata);
                 }
             }
 

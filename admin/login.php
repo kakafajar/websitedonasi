@@ -10,7 +10,7 @@
 
         foreach ($users as $user){
             if ( $username == $user->get_username() && password_verify($password, $user->get_password()) ){
-                $_SESSION['user'] = $user;
+                $_SESSION['user'] = serialize($user);
 
                 header("Location: index.php");
                 $errormsg = "benar";

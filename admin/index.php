@@ -84,8 +84,9 @@
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 <?php
-    session_start();
+    require_once 'models/connection.php';
 
     if (! isset($_SESSION["user"])){
         header("Location: login.php");
