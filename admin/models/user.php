@@ -1,13 +1,13 @@
 <?php
+    require_once __DIR__ . '/connection.php';
+    require_once __DIR__ . '/model.php';
 
-    require_once 'connection.php';
+    class User extends Model{
+        protected static $table_name = "users";
 
-    class User{
-        protected $id;
         protected $username;
         protected $password;
         protected $role;
-
 
         function __construct($id, $username, $password, $role){
             $this->id=$id;
@@ -16,7 +16,6 @@
             $this->role=$role;
         }
 
-
         public static function from_array($array){
             return new User(
                 $array[0],
@@ -24,11 +23,6 @@
                 $array[2],
                 $array[3]
             );
-        }
-
-
-        function get_id(){
-            return $this->id;
         }
 
         function get_username(){
@@ -43,7 +37,6 @@
             return $this->role;
         }
 
-
         public static function get($id){
             global $conn;
             $user = null;
@@ -56,23 +49,6 @@
             }
 
             return $user;
-        }
-
-
-        public static function get_all(){
-            global $conn;
-            $users = null;
-
-            $result = $conn->query("SELECT * FROM users");
-            if ($result->num_rows > 0){
-                $rawdatas = $result->fetch_all();
-                
-                foreach ($rawdatas as $rawdata){
-                    $users[] = User::from_array($rawdata);
-                }
-            }
-
-            return $users;
         }
     }
 

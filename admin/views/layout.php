@@ -1,6 +1,6 @@
 <?php
-    require_once 'models/user.php';
-    require_once 'models/connection.php';
+    require_once __DIR__ . '/../models/user.php';
+    require_once __DIR__ . '/../models/connection.php';
 
     if (! isset($_SESSION["user"])){
         header("Location: login.php");
@@ -89,14 +89,17 @@
     </body>
 </html>
 <script>
-    let content_location = document.getElementById("content_location");
-    let content = document.getElementById("content");
     
-    if (content){
-        content_location.append(content);
-    }
 
     window.addEventListener('DOMContentLoaded', event => {
+        let content_location = document.getElementById("content_location");
+        let content = document.getElementById("content");
+        
+        if (content){
+            content_location.append(content);
+        }
+        
+        
         const datatablesSimple = document.getElementById('datatable');
         if (datatablesSimple) {
             new simpleDatatables.DataTable(datatablesSimple);
