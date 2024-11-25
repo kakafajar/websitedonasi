@@ -28,9 +28,11 @@
     </div>
 </div>
 <script>
-    window.addEventListener('DOMContentLoaded', event => {
-        document.getElementById('modal').show();
-    });
+    const myModal = new bootstrap.Modal('#modal', {
+        keyboard: false
+    })
+    myModal.show();
+
 </script>
 <?php } ?>
 
@@ -72,10 +74,3 @@
         </div>
     </div>
 </section>
-<script>
-    const myModal = new bootstrap.Modal('#modal', {
-        keyboard: false
-    })
-    myModal.show();
-
-</script>
