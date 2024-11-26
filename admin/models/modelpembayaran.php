@@ -3,7 +3,14 @@
     require_once __DIR__ . '/connection.php';
     require_once __DIR__ . '/model.php';
 
-    class ModelPembayaran{
+    class ModelPembayaran extends Model{
+        protected static $table_name = "model_pembayaran";
+        protected static $columns = [
+            'id_model',
+            'metode',
+            'keterangan'
+        ];
+
         protected $id;
         protected $nama;
         protected $keterangan;
@@ -46,22 +53,6 @@
             }
 
             return $modelpembayaran;
-        }
-
-        public static function get_all(){
-            global $conn;
-            $modelpembayarans = null;
-
-            $result = $conn->query("SELECT * FROM model_pembayaran");
-            if ($result->num_rows > 0){
-                $rawdatas = $result->fetch_all();
-                
-                foreach ($rawdatas as $rawdata){
-                    $modelpembayarans[] = ModelPembayaran::from_array($rawdata);
-                }
-            }
-
-            return $modelpembayarans;
         }
 
     }

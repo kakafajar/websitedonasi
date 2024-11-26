@@ -4,24 +4,26 @@
 
     class User extends Model{
         protected static $table_name = "users";
+        protected static $columns = [
+            'id',
+            'username',
+            'password',
+        ];
 
         protected $username;
         protected $password;
-        protected $role;
 
-        function __construct($id, $username, $password, $role){
+        function __construct($id, $username, $password){
             $this->id=$id;
             $this->username=$username;
             $this->password=$password;
-            $this->role=$role;
         }
 
         public static function from_array($array){
             return new User(
                 $array[0],
                 $array[1],
-                $array[2],
-                $array[3]
+                $array[2]
             );
         }
 

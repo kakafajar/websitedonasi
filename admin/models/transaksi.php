@@ -3,8 +3,17 @@
     require_once __DIR__ . '/connection.php';
     require_once __DIR__ . '/model.php';
 
-    class Transaksi{
-        protected $id;
+    class Transaksi extends Model{
+        protected static $table_name = "transaksi";
+        protected static $columns = [
+            'transaksi_id',
+            'donatur',
+            'id_model',
+            'jumlah',
+            'pesan',
+            'tanggal'
+        ];
+        
         protected $donatur;
         protected $idmodel;
         protected $jumlah;
