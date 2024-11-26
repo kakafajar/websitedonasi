@@ -1,5 +1,5 @@
 AOS.init({
-    duration: 2000, // Durasi animasi dalam milidetik
+    duration: 1000, // Durasi animasi dalam milidetik
     once: true // Animasi hanya berjalan sekali
   });
 
@@ -24,3 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+  // Script untuk menambahkan class "scrolled" saat halaman discroll
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar-transparent");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });

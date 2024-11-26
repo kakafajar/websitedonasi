@@ -35,44 +35,51 @@
     </script>
   </head>
   <body>
-      <!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #3C552D;">
-  <div class="container links-white">
-  <a class="Logo" href="#"><img src="img/logo.png" alt="logo" style="width: 70px;"></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+    <!-- navbar section -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-transparent"
+      style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"
+      data-aos="fade-down"
     >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto links-white">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tentang.html">tentang</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Program</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="kegiatan.html">kegiatan</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="donasi.php">Donasi</a>
-        </li>
-    </div>
-  </div>
-</nav>
+      <div class="container">
+        <a class="Logo" href="#">
+          <img src="img/logo.png" alt="logo" style="width: 40px;">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" style="color: white;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tentang.html" >Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Program</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kegiatan.html">Kegiatan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="donasi.php">Donasi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Navbar -->
 <!-- Header -->
 <header class="parallax-header-tn">
@@ -242,6 +249,7 @@
   <!-- Bootstrap JS -->
   <!-- AOS JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

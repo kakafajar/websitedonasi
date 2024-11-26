@@ -4,45 +4,81 @@
     color: white !important;
     text-decoration: none;
   } 
+  .nav-link {
+    position: relative; /* Dibutuhkan untuk pseudo-element */
+    color: white;
+    text-decoration: none; /* Hilangkan garis bawah default */
+    padding-bottom: 5px; /* Tambahkan jarak kecil antara teks dan garis */
+    transition: color 0.3s ease; /* Animasi transisi untuk warna teks */
+  }
+  
+  /* Efek hover untuk warna teks */
+  .nav-link:hover {
+    color: #ffc037; /* Ubah warna teks saat hover */
+  }
+  
+  /* Garis bawah */
+  .nav-link::after {
+    content: ""; /* Pseudo-element kosong untuk garis */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Tepat di bawah teks */
+    height: 2px; /* Ketebalan garis */
+    background-color: orange; /* Warna garis */
+    width: 0; /* Awalnya tidak terlihat */
+    transition: width 0.3s ease; /* Animasi transisi untuk garis */
+  }
+  
+  /* Saat hover, garis muncul */
+  .nav-link:hover::after {
+    width: 100%; /* Memenuhi panjang teks */
+  }
 
-.navbar-nav .nav-link {
-color: white; /* Warna teks default */
-transition: background-color 0.3s ease, color 0.3s ease; /* Delay pada hover */
-border-radius: 5px; /* Membuat bentuk rounded */
+/* Ukuran tetap untuk card */
+.program-card {
+  height: 600px; /* Tinggi tetap */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.navbar-nav .nav-link:hover {
-background-color: #28a745; /* Warna hijau untuk hover */
-color: #fff; /* Warna teks pada hover */
-transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan animasi */
+/* Atur gambar agar tidak memengaruhi ukuran card */
+.program-card .card-img-top {
+  height: 350px; /* Tinggi tetap untuk gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  width: 360px; /* Sesuaikan lebar gambar dengan card */
 }
- /* Styling tambahan untuk card */
- .program-card {
-    transition: transform 0.3s ease;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .program-card:hover {
-    transform: scale(1.05);
-  }
-  .card-img-top {
-    /* height: 200px;
-    object-fit: cover; */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  .card-title {
-    font-weight: bold;
-    color: #006400; /* Hijau tua */
-  }
-  .btn-custom {
-    background-color: #28a745;
-    color: #fff;
-    transition: background-color 0.3s;
-  }
-  .btn-custom:hover {
-    background-color: #218838;
-  }
+
+/* Atur teks dan tombol agar berada di bawah */
+.program-card .card-body {
+  padding: 50px;
+  text-align: center;
+}
+
+.program-card h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.btn-custom {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #287e3c;
+}
+
 
   /* jumbotron section */
 .carousel-control-prev-icon,
@@ -223,6 +259,81 @@ font-size: 20px; /* Ukuran ikon */
 
 
 
+/* hover card */
+
+
+
+  /* Membungkus gambar dengan container */
+  .image-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Gambar default */
+  .image-container img {
+    transition: transform 0.3s ease; /* Animasi zoom */
+    width: 100%;
+  }
+
+  /* Efek zoom saat hover */
+  .image-container:hover img {
+    transform: scale(1.1); /* Membesarkan gambar sedikit */
+  }
+
+  /* Container untuk gambar */
+.image-container {
+  position: relative;
+}
+
+/* Overlay hitam */
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Warna hitam transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Untuk menumpuk tulisan */
+}
+
+/* Tulisan dalam overlay */
+.image-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.image-container p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+
+/* Navbar Transparent */
+.navbar-transparent {
+  background-color:  rgba(0, 128, 0, 0.5); /* Transparansi 40% */
+  transition: background-color 0.3s ease-in-out; /* Animasi transisi */
+}
+
+
+.navbar-transparent .nav-link:hover {
+  color: rgb(255, 255, 255); /* Warna hover */
+}
+
+.navbar-transparent .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5); /* Toggler transparan */
+}
+
+.navbar-transparent .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Sticky navbar with opaque effect on scroll */
+.navbar-transparent.scrolled {
+  background-color:  rgba(0, 128, 0, 0.5); /* Warna lebih gelap ketika scroll */
+}
 
   
   
