@@ -1,5 +1,5 @@
 <?php 
-    require_once __DIR__ . '/models/user.php';
+    require_once __DIR__ . '/../models/user.php';
 
     if (isset($_GET['mode'])){
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
