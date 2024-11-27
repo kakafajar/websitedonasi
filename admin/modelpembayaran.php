@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . '/models/modelpembayaran.php';
+    require_once __DIR__ . '/../models/modelpembayaran.php';
 
     if (isset($_GET['mode'])){
         switch ($_GET['mode']){

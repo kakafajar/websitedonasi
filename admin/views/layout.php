@@ -1,6 +1,6 @@
 <?php
-    require_once __DIR__ . '/../models/user.php';
-    require_once __DIR__ . '/../models/connection.php';
+    require_once __DIR__ . '/../../models/user.php';
+    require_once __DIR__ . '/../../models/connection.php';
 
     if (! isset($_SESSION["user"])){
         header("Location: login.php");
