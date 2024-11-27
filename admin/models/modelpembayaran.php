@@ -41,20 +41,6 @@
             return $this->keterangan;
         }
 
-        public static function get($id){
-            global $conn;
-            $modelpembayaran = null;
-
-            $result = $conn->query("SELECT * FROM model_pembayaran WHERE id_model=$id");
-            if ($result->num_rows > 0){
-                $rawdata = $result->fetch_all()[0];
-
-                $modelpembayaran = ModelPembayaran::from_array($rawdata);
-            }
-
-            return $modelpembayaran;
-        }
-
     }
 
 ?>

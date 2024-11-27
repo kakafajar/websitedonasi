@@ -38,20 +38,7 @@
         function get_role(){
             return $this->role;
         }
-
-        public static function get($id){
-            global $conn;
-            $user = null;
-
-            $result = $conn->query("SELECT * FROM users WHERE id=$id");
-            if ($result->num_rows > 0){
-                $rawdata = $result->fetch_all();
-
-                $user = User::from_array($rawdata);
-            }
-
-            return $user;
-        }
+        
     }
 
 ?>

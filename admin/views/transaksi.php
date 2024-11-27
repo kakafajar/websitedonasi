@@ -57,7 +57,7 @@
                             <tr>
                                 <td><?=$transaction->get_id()?></td>
                                 <td><?=$transaction->get_donatur()?></td>
-                                <td><?=$transaction->get_idmodel()?></td>
+                                <td><?=$transaction->get_model()->get_nama()?></td>
                                 <td><?=$transaction->get_jumlah()?></td>
                                 <td><?=$transaction->get_pesan()?></td>
                                 <td><?=$transaction->get_tanggal()?></td>

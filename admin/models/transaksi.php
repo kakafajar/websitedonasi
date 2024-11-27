@@ -2,6 +2,7 @@
 
     require_once __DIR__ . '/connection.php';
     require_once __DIR__ . '/model.php';
+    require_once __DIR__ . '/modelpembayaran.php';
 
     class Transaksi extends Model{
         protected static $table_name = "transaksi";
@@ -16,6 +17,7 @@
         
         protected $donatur;
         protected $idmodel;
+        protected $model;
         protected $jumlah;
         protected $pesan;
         protected $tanggal;
@@ -57,6 +59,13 @@
             return $this->idmodel;
         }
 
+        function get_model(){
+            if ($this->model == null){
+                $model = ModelPembayaran::get($this->get_idmodel());
+            }
+            return $model;
+        }
+
 
         function get_jumlah(){
             return $this->jumlah;
@@ -72,37 +81,6 @@
             return $this->tanggal;
         }
 
-        
-        public static function get($id){
-            global $conn;
-            $transaction = null;
-
-            $result = $conn->query("SELECT * FROM transaksi WHERE id=$id");
-            if ($result->num_rows > 0){
-                $rawdata = $result->fetch_all();
-
-                $transaction = Transaksi::from_array($rawdata);
-            }
-
-            return $transaction;
-        }
-
-
-        public static function get_all(){
-            global $conn;
-            $transactions = null;
-
-            $result = $conn->query("SELECT * FROM transaksi");
-            if ($result->num_rows > 0){
-                $rawdatas = $result->fetch_all();
-                
-                foreach ($rawdatas as $rawdata){
-                    $transactions[] = Transaksi::from_array($rawdata);
-                }
-            }
-
-            return $transactions;
-        }
     }
 
 ?>

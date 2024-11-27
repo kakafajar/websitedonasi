@@ -18,6 +18,20 @@
         public static function from_array($array){
             return new static($array[0]);
         }
+
+        public static function get($id){
+            global $conn;
+            $data = null;
+
+            $result = $conn->query("SELECT * FROM " . static::$table_name . " WHERE " . static::$columns[0] . "=$id");
+            if ($result->num_rows > 0){
+                $rawdata = $result->fetch_all()[0];
+
+                $data = static::from_array($rawdata);
+            }
+
+            return $data;
+        }
         
         public static function get_all(){
             global $conn;
