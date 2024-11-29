@@ -4,11 +4,13 @@ const modal = new bootstrap.Modal('#modal', {
     keyboard: false
 });
 
-document.getElementById("submit-button").addEventListener('click', process_edit);
+document.getElementById("submit-button").addEventListener('click', process_submit);
+let modal_mode = 'add';
 
 function add(){
     modalTitle.innerHTML = 'Add Data';
     form.action = "?mode=add";
+    modal_mode = 'add';
     
     for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
@@ -23,6 +25,7 @@ function add(){
 function edit(button){
     modalTitle.innerHTML = 'Edit Data';
     form.action = "?mode=edit";
+    modal_mode = 'edit';
 
     let row = button.parentElement.parentElement;
     for (let index = 0; index < form.elements.length; index++) {
@@ -35,18 +38,22 @@ function edit(button){
     modal.show();
 }
 
-function process_edit(){
-    swal({
-        title : "Apakah anda yakin ingin merubah data?",
-        text : "data akan diupdate",
-        icon : "warning",
-        buttons : true,
-        dangerMode : true,
-    }).then((clicked) => {
-        if (clicked){
-            form.submit();
-        }
-    });
+function process_submit(){
+    if (modal_mode == 'add'){
+        form.submit();
+    }else{
+        swal({
+            title : "Apakah anda yakin ingin merubah data?",
+            text : "data akan diupdate",
+            icon : "warning",
+            buttons : true,
+            dangerMode : true,
+        }).then((clicked) => {
+            if (clicked){
+                form.submit();
+            }
+        });
+    }
 }
 
 function erase(button){

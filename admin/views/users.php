@@ -21,7 +21,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="submit-button">Save changes</button>
                 </div>
             </form>
         </div>
@@ -57,7 +57,10 @@
                                 <td><?=$user->get_password()?></td>
                                 <td>
                                     <button class="btn btn-primary" onclick="edit(this)">Edit</button>
-                                    <a href="?mode=delete&id=<?= $user->get_id() ?>" class="btn btn-danger">Hapus</a>
+                                    <button class="btn btn-danger" onclick="erase(this)">
+                                        <a href="?mode=delete&id=<?=$user->get_id()?>" onclick="event.stopPropagation()"></a>
+                                        Hapus
+                                    </button>
                                 </td>
                             </tr>
                         <?php } ?>
