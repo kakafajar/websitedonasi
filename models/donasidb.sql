@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 09:31 AM
+-- Generation Time: Nov 29, 2024 at 09:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,10 @@ CREATE TABLE `model_pembayaran` (
 --
 
 INSERT INTO `model_pembayaran` (`id_model`, `metode`, `keterangan`) VALUES
-(26, 'asdwe', 'asddgg');
+(26, 'Transfer Bank', 'asd'),
+(27, 'bri', 'saxophones'),
+(28, 'test', 'testambah'),
+(29, 'test', 'testtambah2f');
 
 -- --------------------------------------------------------
 
@@ -49,18 +52,22 @@ INSERT INTO `model_pembayaran` (`id_model`, `metode`, `keterangan`) VALUES
 CREATE TABLE `transaksi` (
   `transaksi_id` int(11) NOT NULL,
   `donatur` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
   `id_model` int(11) DEFAULT NULL,
   `jumlah` int(11) NOT NULL,
   `pesan` text DEFAULT NULL,
-  `tanggal` timestamp NOT NULL DEFAULT current_timestamp()
+  `bukti_transfer` text DEFAULT NULL,
+  `status` enum('pending','finished') DEFAULT 'pending',
+  `tanggal` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`transaksi_id`, `donatur`, `id_model`, `jumlah`, `pesan`, `tanggal`) VALUES
-(17, '17', 26, 200000, 'test', '2024-10-31 02:42:22');
+INSERT INTO `transaksi` (`transaksi_id`, `donatur`, `email`, `id_model`, `jumlah`, `pesan`, `bukti_transfer`, `status`, `tanggal`) VALUES
+(17, 'irfan', '', 26, 200000, 'test', NULL, 'pending', '2024-10-31 02:42:22'),
+(22, 'fauzi2', 'ini@gmail.com', 27, 50000, 'asd', '/upload/1732908152-88523aee7d9fa79296199c7b97013891-6cdf509c0c97eb623174ca4e19177686.jpg', 'pending', '2024-11-29 17:27:59');
 
 -- --------------------------------------------------------
 
@@ -79,8 +86,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$7n.roblkcRJlmMAkskhboOc/ojaqvR7Tw6F9/4VMd1EtKmfEoPckO'),
-(3, 'asd', '$2y$10$noZclMGhWetBVpqNJ4.kEe7v9dzLIrYKM1wQuKsPMnEIQlGzkgKtG');
+(1, 'admin', '$2y$10$ke.jhWIwu2/uZz6yiIs6WuM31k27mfuAL3RToheCgV2wtKGAX.l3W'),
+(3, 'asdg', '$2y$10$Cyto0iHUt57EWGWQZ0Kt2.9gXSyoDmz5LElPJnAnUfVOEhHz1R.fC');
 
 --
 -- Indexes for dumped tables
@@ -113,13 +120,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `model_pembayaran`
 --
 ALTER TABLE `model_pembayaran`
-  MODIFY `id_model` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_model` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `transaksi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `transaksi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
