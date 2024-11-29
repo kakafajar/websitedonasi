@@ -63,7 +63,9 @@
             for ($i=1; $i < count(static::$columns); $i++) { 
                 $column = static::$columns[$i];
                 $arrayitem = $array[$i-1];
-                $set_params[] = "$column='$arrayitem'";
+                if ($arrayitem != null){
+                    $set_params[] = "$column='$arrayitem'";
+                }
             }
             $sql = "UPDATE " . static::$table_name . " SET " . implode(',', $set_params) . " WHERE " . static::$columns[0] .  "=$id ";
             $query = $conn->query($sql);

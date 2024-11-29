@@ -9,29 +9,36 @@
         protected static $columns = [
             'transaksi_id',
             'donatur',
+            'email',
             'id_model',
             'jumlah',
             'pesan',
+            'bukti_transfer',
+            'status',
             'tanggal'
         ];
         
         protected $donatur;
         protected $idmodel;
+        protected $email;
         protected $model;
         protected $jumlah;
         protected $pesan;
+        protected $bukti_transfer;
+        protected $status;
         protected $tanggal;
 
-
-        function __construct($id, $donatur, $idmodel, $jumlah, $pesan, $tanggal){
+        function __construct($id, $donatur, $email, $idmodel, $jumlah, $pesan, $bukti_transfer, $status, $tanggal){
             $this->id = $id;
             $this->donatur = $donatur;
+            $this->email = $email;
             $this->idmodel = $idmodel;
             $this->jumlah = $jumlah;
             $this->pesan = $pesan;
+            $this->bukti_transfer = $bukti_transfer;
+            $this->status = $status;
             $this->tanggal = $tanggal;
         }
-
 
         public static function from_array($array){
             return new Transaksi(
@@ -40,7 +47,10 @@
                 $array[2],
                 $array[3],
                 $array[4],
-                $array[5]
+                $array[5],
+                $array[6],
+                $array[7],
+                $array[8]
             );
         }
 
@@ -54,6 +64,9 @@
             return $this->donatur;
         }
 
+        function get_email(){
+            return $this->email;
+        }
 
         function get_idmodel(){
             return $this->idmodel;
@@ -66,16 +79,21 @@
             return $model;
         }
 
-
         function get_jumlah(){
             return $this->jumlah;
         }
-
 
         function get_pesan(){
             return $this->pesan;
         }
 
+        function get_bukti_transfer(){
+            return $this->bukti_transfer;
+        }
+
+        function get_status(){
+            return $this->status;
+        }
 
         function get_tanggal(){
             return $this->tanggal;
