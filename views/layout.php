@@ -42,7 +42,7 @@
         >
             <div class="container">
                 <a class="Logo" href="#">
-                    <img src="img/logo.png" alt="logo" style="width: 40px;">
+                    <img src="./views/img/logo.png" alt="logo" style="width: 40px;">
                 </a>
 
                 <button
