@@ -125,7 +125,7 @@ font-size: 20px; /* Ukuran ikon */
   .parallax-header {
     /* Set height and background image */
     height: 80vh;
-    background-image: url('img/bg2.jpg');
+    background-image: url('./../img/bg2.jpg');
     background-size: cover;
     background-position: center;
   
@@ -174,7 +174,7 @@ font-size: 20px; /* Ukuran ikon */
   .parallax-header-tn {
     /* Set height and background image */
     height: 80vh;
-    background-image: url('img/bg3.jpg');
+    background-image: url('./../img/bg3.jpg');
     background-size: cover;
     background-position: center;
   

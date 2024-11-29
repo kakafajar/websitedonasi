@@ -42,7 +42,7 @@
         >
             <div class="container">
                 <a class="Logo" href="#">
-                    <img src="img/logo.png" alt="logo" style="width: 40px;">
+                    <img src="./views/img/logo.png" alt="logo" style="width: 40px;">
                 </a>
 
                 <button
@@ -64,7 +64,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="tentang.html" >Tentang</a>
+                            <a class="nav-link" href="tentang.php" >Tentang</a>
                         </li>
                         
                         <li class="nav-item">
