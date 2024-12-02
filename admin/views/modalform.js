@@ -31,7 +31,9 @@ function edit(button){
     for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
         if (element.tagName == "INPUT"){
-            element.value = row.childNodes[index-1].innerHTML;
+            if (element.type != "file"){
+                element.value = row.childNodes[index-1].innerHTML;
+            }
         }
     }
     

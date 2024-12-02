@@ -10,12 +10,20 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row row-cols-2">
-                            <label for="">Id</label>
-                            <input type="text" id="form-id" name="id" readonly>
-                            <label for="">Nama</label>
-                            <input type="text" id="form-nama" name="nama">
-                            <label for="">Keterangan</label>
-                            <input type="text" id="form-keterangan" name="keterangan">
+                            <label for="form-id">Id</label>
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-id" name="id" readonly>
+                            </div>
+                            
+                            <label for="form-nama">Nama</label>
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-nama" name="nama">
+                            </div>
+                            
+                            <label for="form-keterangan">Keterangan</label>
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-keterangan" name="keterangan">
+                            </div>
                         </div>
                     </div>
                 </div>
