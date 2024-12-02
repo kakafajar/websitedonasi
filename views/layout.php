@@ -67,18 +67,11 @@
                             <a class="nav-link" href="tentang.php" >Tentang</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php#about">Program</a>
-                        </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="kegiatan.php">Kegiatan</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php#contact">Contact</a>
-                        </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="donasi.php">Donasi</a>
                         </li>
@@ -149,11 +142,10 @@
                     <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                     <p><i class="fas fa-home me-3"></i>Jln Bendungan Leuweung Seureuh, Lemahmulya, Kec. Majalaya, Karawang, Jawa Barat 40170</p>
                     <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        info@example.com
+                        <i class="fas fa-envelope me-3" href="sayadislamicboardingschool@gmail.com"></i>
+                        sayadislamicboardingschool@gmail.com
                     </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    <p><i class="fas fa-phone me-3"></i>081288357637</p>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -165,10 +157,9 @@
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2024 Copyright:
-                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">UBP karawang</a>
+                <a class="text-reset fw-bold" href="">Saung Do'a Anak Yatim dan Dhuafa</a>
             </div>
         </footer>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script src="views/js/script.js"></script>
         <script
@@ -182,6 +173,7 @@
         crossorigin="anonymous"
         ></script>
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             window.addEventListener('DOMContentLoaded', event => {

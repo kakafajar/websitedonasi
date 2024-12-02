@@ -50,7 +50,7 @@
           <div class="col-md-4 text-center mb-4">
             <div class="p-4 shadow rounded h-100"  style="background-color: #FEEC37;">
               <h3 class="fw-bold">Tujuan</h3>
-              <p>Meningkatkan kualitas hidup anak-anak kurang beruntung melalui pendidikan dan dukungan spiritual.</p>
+              <p>Memberikan kesempatan bagi generasi insan islami, yang tidak boleh tertinggal dan kalah karena keadaan.</p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="container text-center team-section">
                 <!-- Baris pertama: 1 elemen di tengah -->
-                <div class="row justify-content-center mb-4">
+                <div class="row justify-content-center mb-4" data-aos="zoom-in">
                     <div class="col-12 col-md-4">
                         <div class="team-member">
                             <div class="image-container">
@@ -79,7 +79,7 @@
                 </div>
             
                 <!-- Baris kedua: 4 elemen sejajar -->
-                <div class="row justify-content-center mb-4">
+                <div class="row justify-content-center mb-4" data-aos="zoom-in">
                     <div class="col-6 col-md-3">
                         <div class="team-member">
                             <div class="image-container">
@@ -89,7 +89,7 @@
                         <p>Kepala sekolah SMP dan SMK</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/pengajar1.jpeg" alt="Nama Anggota 2">
@@ -98,7 +98,7 @@
                             <p>Pengajar Ponpes</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/pengajar2.jpeg" alt="Nama Anggota 3">
@@ -107,7 +107,7 @@
                             <p>Pengajar Ponpes</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/pengajar3.jpeg" alt="Nama Anggota 4">
@@ -119,7 +119,7 @@
                 </div>
             
                 <!-- Baris ketiga: 4 elemen sejajar -->
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" data-aos="zoom-in">
                     <div class="col-6 col-md-3">
                         <div class="team-member">
                             <div class="image-container">
@@ -129,7 +129,7 @@
                             <p>Pengajar Ponpes</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/pengajar umum.jpeg" alt="Nama Anggota 6">
@@ -138,7 +138,7 @@
                             <p>Pengajar Umum</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/asisten dosen.jpeg" alt="Nama Anggota 7">
@@ -147,13 +147,22 @@
                             <p>Asistes Dosen</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
                         <div class="team-member">
                             <div class="image-container">
                                 <img src="./views/img/admin.jpeg" alt="Nama Anggota 8">
                             </div>
                             <h5>Paramitha H, S.Pd</h5>
                             <p>Admin</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="zoom-in">
+                        <div class="team-member">
+                            <div class="image-container">
+                                <img src="./views/img/pengajarUmum2.jpeg" alt="Nama Anggota 8">
+                            </div>
+                            <h5>Maya Aida, S.Pd</h5>
+                            <p>Pengajar Umum</p>
                         </div>
                     </div>
                 </div>
