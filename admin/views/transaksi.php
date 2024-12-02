@@ -11,25 +11,56 @@
                     <div class="container">
                         <div class="row row-cols-2">
                             <label for="form-id">Id</label>
-                            <input type="text" id="form-id" name="id" readonly>
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-id" name="id" readonly>
+                            </div>
+                            
                             <label for="form-donatur">Donatur</label>
-                            <input type="text" id="form-nama" name="nama">
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-nama" name="nama">
+                            </div>
+                            
                             <label for="form-email">Email</label>
-                            <input type="text" id="form-email" name="email">
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-email" name="email">
+                            </div>
+
                             <label for="form-model">Model Pembayaran</label>
-                            <select class="form-select" name="model" id="form-model">
-                                <?php foreach($models as $model) { ?>
-                                    <option value="<?=$model->get_id()?>"><?=$model->get_nama()?></option>
-                                <?php } ?>
-                            </select>
+                            <div class="col">
+                                <select class="form-select col" name="model" id="form-model">
+                                    <?php foreach($models as $model) { ?>
+                                        <option value="<?=$model->get_id()?>"><?=$model->get_nama()?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
                             <label for="form-jumlah">Jumlah</label>
-                            <input type="text" id="form-jumlah" name="jumlah">
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-jumlah" name="jumlah">
+                            </div>
+                            
                             <label for="form-pesan">Pesan</label>
-                            <input type="text" id="form-pesan" name="pesan">
+                            <div class="col">
+                                <input class="form-control" type="text" id="form-pesan" name="pesan">
+                            </div>
+                            
+                            <label for="form-bukti">Bukti Transfer</label>
+                            <div class="col">
+                                <input class="form-control" type="file" id="form-bukti" name="bukti">
+                            </div>
+                            
                             <label for="form-status">Status</label>
-                            <input type="text" id="form-status" name="status">
+                            <div class="col">
+                                <select class="form-select" name="status" id="form-status">
+                                    <option value="pending">Pending</option>
+                                    <option value="finished">Confirmed</option>
+                                </select>
+                            </div>
+                            
                             <label for="form-tanggal">Tanggal</label>
-                            <input type="text" id="form-tanggal" name="tanggal">
+                            <div class="col">
+                                <input class="form-control" type="datetime-local" id="form-tanggal" name="tanggal">
+                            </div>
                         </div>
                     </div>
                 </div>
