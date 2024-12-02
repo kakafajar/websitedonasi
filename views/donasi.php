@@ -8,7 +8,7 @@
         <div class="col-md-8">
         <div class="p-4 rounded shadow" style="background-color: #f8f9fa;">
             <h2 class="text-center mb-4">Formulir Donasi</h2>
-            <?php if ($submit_model == '-1') { ?>
+            <?php if ($transaksi == null) { ?>
                 <form action="" method="POST">
                     <div class="mb-3 text-start">
                         <label for="nama" class="form-label">Nama</label>
@@ -63,13 +63,9 @@
                     </div>
                 </form>
             <?php } else { ?>
-                <?php foreach($models as $model) {
-                    if ($model->get_id() == $submit_model) { 
-                ?>
-                    <h2><?= $model->get_nama() ?></h2>
-                    <h2><?= $model->get_keterangan() ?></h2>
-                    <a href="" class="btn btn-success">Konfirmasi</a>
-                <?php }} ?>
+                <h2><?= $transaksi->get_model()->get_nama() ?></h2>
+                <h2><?= $transaksi->get_model()->get_keterangan() ?></h2>
+                <a href="konfirmasi.php?transaksi_id=<?= $transaksi->get_id() ?>" class="btn btn-success">Konfirmasi</a>
             <?php } ?>
         </div>
         </div>
