@@ -181,7 +181,7 @@
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" id="message" name="message" rows="3" placeholder="Your Message"></textarea>
             </div>
-            <button type="submit" name="submit-message" class="btn btn-primary">Send Message</button>
+            <button type="submit" name="submit-message" class="btn" style="background-color: #28a745; color:#fff;">Send Message</button>
           </form>
         </div>
         <div class="col-md-6">
