@@ -34,3 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
       navbar.classList.remove("scrolled");
     }
   });
+
+
+
+         // Script untuk menandai navbar yang aktif
+         const currentLocation = window.location.pathname.split('/').pop();
+         const navLinks = document.querySelectorAll('.nav-link');
+         navLinks.forEach(link => {
+             if (link.getAttribute('href') === currentLocation) {
+                 link.classList.add('active');
+             } else {
+                 link.classList.remove('active');
+             }
+         });
+

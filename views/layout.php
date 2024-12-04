@@ -4,12 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Saung Yatim Sayad <?=$title?></title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/contacts/contact-5/assets/css/contact-5.css">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,6 +13,10 @@
         <link rel="stylesheet" href="views/css/styles.css">
     </head>
     <style>
+           .nav-link.active {
+                color: orange !important; /* Warna untuk halaman aktif */
+                font-weight: bold;
+            }
         .map-container {
         position: relative;
         padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -34,14 +33,13 @@
 
     </style>
     <body>
-    <!-- navbar section -->
-        <nav
-            class="navbar navbar-expand-lg fixed-top navbar-transparent"
+       <!-- navbar section -->
+       <nav
+            class="navbar navbar-expand-lg fixed-top  navbar-transparent"
             style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"
-            data-aos="fade-down"
-        >
+        data-aos="fade-down">
             <div class="container">
-                <a class="Logo" href="#">
+                <a class="navbar-brand" href="#">
                     <img src="./views/img/logo.png" alt="logo" style="width: 40px;">
                 </a>
 
@@ -60,18 +58,14 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link"href="index.php" style="color: white;">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
-                        
                         <li class="nav-item">
-                            <a class="nav-link" href="tentang.php" >Tentang</a>
+                            <a class="nav-link" href="tentang.php">Tentang</a>
                         </li>
-                        
-
                         <li class="nav-item">
                             <a class="nav-link" href="kegiatan.php">Kegiatan</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="donasi.php">Donasi</a>
                         </li>
@@ -80,8 +74,7 @@
             </div>
         </nav>
 
-        <div id="content_location">
-        </div>
+        <div id="content_location"></div>
 
         <footer class="text-center text-lg-start bg-body-tertiary text-muted">
             <!-- Section: Social media -->
@@ -162,19 +155,8 @@
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script src="views/js/script.js"></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"
-        ></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"
-        ></script>
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Gunakan hanya versi ini -->
+        
         <script>
             window.addEventListener('DOMContentLoaded', event => {
                 let content_location = document.getElementById("content_location");
@@ -184,6 +166,9 @@
                     content_location.append(content);
                 }
             });
-        </script>
+
+
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
