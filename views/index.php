@@ -1,43 +1,49 @@
 <section id="content">
-  <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner ratio ratio-16x9">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="image-container">
-          <img src="views/img/bg1.jpg" class="d-block w-100" alt="Slide 1">
-          <div class="overlay" data-aos="zoom-out">
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="image-container">
-          <img src="views/img/program4.jpg" class="d-block w-100" alt="Slide 2">
-          <div class="overlay">
-            <h1 class="text-center text-white"></h1>
-            <p class="text-center text-white"></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="image-container">
-          <img src="views/img/header.jpg" class="d-block w-100" alt="Slide 3">
-          <div class="overlay">
-            <h1 class="text-center text-white"></h1>
-            <p class="text-center text-white"></p>
-          </div>
+ <!-- Carousel -->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner ratio ratio-16x9">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="image-container position-relative">
+        <img src="views/img/bg1.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <h1 class="text-white text-center mb-3 fw-bold fs-3 fs-md-2 fs-lg-1" data-aos="zoom-out">Bersama Kita Bisa Berdonasi</h1>
+          <a href="donasi.php" class="btn fw-bold px-4 py-2 fs-6 fs-md-5 fs-lg-4"  style="background-color: #28a745; color:#fff;" role="button">Donasi Sekarang</a>
         </div>
       </div>
     </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="image-container position-relative">
+        <img src="views/img/program4.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <h1 class="text-white text-center mb-3 fw-bold fs-3 fs-md-2 fs-lg-1" data-aos="zoom-out">Donasi Anda, Harapan Kami</h1>
+          <a href="donasi.php" class="btn fw-bold px-4 py-2 fs-6 fs-md-5 fs-lg-4" style="background-color: #28a745; color:#fff;" role="button">Donasi Sekarang</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="image-container position-relative">
+        <img src="views/img/header.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <h1 class="text-white text-center mb-3 fw-bold fs-3 fs-md-2 fs-lg-1" data-aos="zoom-out">Mari Wujudkan Kebaikan Bersama</h1>
+          <a href="donasi.php" class="btn  fw-bold px-4 py-2 fs-6 fs-md-5 fs-lg-4" style="background-color: #28a745; color:#fff;" role="button">Donasi Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
