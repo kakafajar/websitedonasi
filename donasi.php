@@ -22,7 +22,12 @@
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $idmodel = $_POST['metode_pembayaran'];
+    
     $jumlah = $_POST['jumlah_donasi'];
+    if ($_POST['jumlah_manual'] > 0){
+      $jumlah = $_POST['jumlah_manual'];
+    }
+
     $pesan = $_POST['pesan'];
 
     date_default_timezone_set('Asia/Bangkok');

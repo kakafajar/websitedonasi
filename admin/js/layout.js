@@ -23,4 +23,17 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    let content_location = document.getElementById("content_location");
+    let content = document.getElementById("content");
+    
+    if (content){
+        content_location.append(content);
+    }
+    
+    
+    const datatablesSimple = document.getElementById('datatable');
+    if (datatablesSimple) {
+        new simpleDatatables.DataTable(datatablesSimple);
+    }
+
 });

@@ -72,7 +72,7 @@
         </div>
     </div>
 </div>
-<script src='./views/modalform.js'></script>
+<script src='js/modalform.js'></script>
 
 <div class="modal fade" tabindex="-1" id="modal-bukti">
     <div class="modal-dialog modal-dialog-centered">
@@ -155,7 +155,6 @@
     const bukti_transfer_img = document.getElementById("bukti-transfer-img");
 
     function showimg(url){
-        console.log(url);
         bukti_transfer_img.src = url;
 
         bukti_transfer_modal.show();

@@ -9,10 +9,10 @@
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-title text-center pt-2">Total Donasi Uang</div>
                     <div class="card-body">
-                        <p class="h3 text-center">Rp. <?= number_format($total_donasi_uang, 2, '.', ',') ?></p>
+                        <p class="h3 text-center">Rp. <?= number_format($total_donasi_uang, 2, ',', '.') ?></p>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <a class="small text-white stretched-link" href="transaksi.php">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -42,48 +42,50 @@
                 </div>
             </div>
         </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <i class="fas fa-chart-area me-1"></i>
-            Total Perbulan
-        </div>
-        <div class="card-body"><canvas id="chart" width="100%" height="30"></canvas></div>
-        <div class="card-footer">
-            Masih Work in progress
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-area me-1"></i>
+                Total Uang Donasi
+                <div class='d-flex justify-content-between'>
+                    <div class='d-flex'>
+                        <button class="btn btn-primary" id="perbulan" onclick="perbulan()">Perbulan</button>
+                        <button class="btn btn-primary" id="pertahun" onclick="pertahun()">Pertahun</button>
+                    </div>
+                    <div>
+                        <div id="perbulan-options" class='align-items-center'>
+                            <label for="" class='me-2'>Tahun</label>
+                            <select class="form-select" name="" id="perbulan-tahun-opsi" onchange="pilih_tahun_perbulan(this)">
+                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div id="pertahun-options" class='align-items-center'>
+                            <label for="">Dari</label>
+                            <select class="form-select" name="" id="pertahun-dari-opsi" onchange="pilih_range_pertahun()">
+                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php } ?>
+                            </select>
+                            <label for="">Ke</label>
+                            <select class="form-select" name="" id="pertahun-ke-opsi" onchange="pilih_range_pertahun()">
+                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas hidden id="chart-uang-bulan" width="100%" height="30"></canvas>
+                <canvas hidden id="chart-uang-tahun" width="100%" height="30">
+            </div>
+            <div class="card-footer">
+                Masih Work in progress
+            </div>
         </div>
     </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<script>
-    const ctx = document.getElementById('chart');
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "Oktober", "November", "Desember"],
-            datasets: [{
-            label: "Jumlah Donasi",
-            backgroundColor: "rgba(2,117,216,1)",
-            borderColor: "rgba(2,117,216,1)",
-            data: [4215, 5312, 6251, 7841, 9821, 14984],
-            }],
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                    min: 0,
-                    max: 20000,
-                    maxTicksLimit: 5
-                    },
-                    gridLines: {
-                    display: true
-                    }
-                }],
-            },
-            legend: {
-            display: false
-            }
-        }
-    });
-</script>
+<script src="js/index.js"></script>

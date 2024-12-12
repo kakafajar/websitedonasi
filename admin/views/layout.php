@@ -23,7 +23,7 @@
     <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Sistem Donasi</a>
+        <a class="navbar-brand ps-3" href="index.php">Sistem Donasi</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <a class="ms-auto" href=""></a>
@@ -80,28 +80,7 @@
             </footer>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/layout.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous"></script>
     </body>
 </html>
-<script>
-    
-
-    window.addEventListener('DOMContentLoaded', event => {
-        let content_location = document.getElementById("content_location");
-        let content = document.getElementById("content");
-        
-        if (content){
-            content_location.append(content);
-        }
-        
-        
-        const datatablesSimple = document.getElementById('datatable');
-        if (datatablesSimple) {
-            new simpleDatatables.DataTable(datatablesSimple);
-        }
-    });
-
-</script>
