@@ -35,7 +35,7 @@
         </div>
     </div>
 </div>
-<script src='./views/modalform.js'></script>
+<script src='js/modalform.js'></script>
 
 <section id="content">
     <div class="container-fluid px-4">
