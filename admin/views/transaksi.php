@@ -122,7 +122,10 @@
                                 <td><?=$transaction->get_id()?></td>
                                 <td><?=$transaction->get_donatur()?></td>
                                 <td><?=$transaction->get_email()?>
-                                <td><?=$transaction->get_model()->get_nama()?></td>
+                                <td>
+                                    <value style="display:none;"><?=$transaction->get_model()->get_id()?></value>
+                                    <a href="" onclick="search_on_table(this, '<?=$transaction->get_model()->get_id()?>', 'modelpembayaran.php')"><?=$transaction->get_model()->get_nama()?></a>
+                                </td>
                                 <td><?=$transaction->get_jumlah()?></td>
                                 <td><?=$transaction->get_pesan()?></td>
                                 <td>
@@ -131,7 +134,9 @@
                                     showimg('../<?= $transaction->get_bukti_transfer() ?>')
                                     ">Show</button>
                                 </td>
-                                <td><?=$transaction->get_status()?></td>
+                                <td>
+                                    <value><?=$transaction->get_status()?></value>
+                                </td>
                                 <td><?=$transaction->get_tanggal()?></td>
                                 <td>
                                     <button class="btn btn-primary" onclick="edit(this)">Edit</button>
