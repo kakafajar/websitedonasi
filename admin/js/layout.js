@@ -29,11 +29,12 @@ window.addEventListener('DOMContentLoaded', event => {
     if (content){
         content_location.append(content);
     }
-    
-    
-    const datatablesSimple = document.getElementById('datatable');
-    if (datatablesSimple) {
-        new simpleDatatables.DataTable(datatablesSimple);
-    }
 
 });
+
+function search_on_table(tag, term, href){
+    sessionStorage.setItem('search', term);
+
+    tag.href=href;
+    tag.click();
+}

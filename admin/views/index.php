@@ -24,7 +24,7 @@
                         <p class="h3 text-center"><?= $total_konfirmasi ?></p>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <a class="small text-white stretched-link" href="#" onclick="search_on_table(this, 'finished', 'transaksi.php')">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <p class="h3 text-center"><?= $total_pending ?></p>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <a class="small text-white stretched-link" href="#" onclick="search_on_table(this, 'pending', 'transaksi.php')">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>

@@ -70,39 +70,44 @@ function pilih_tahun_perbulan(select){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200) {
-            ubah_tahun_perbulan(this);
+            ubah_data_chart(this, chart_uang_bulan);
         }
     }
     xhttp.open("GET", "index.php?tahun-perbulan=" + tahun, true);
     xhttp.send();
 }
 
-function ubah_tahun_perbulan(response){
+pilih_range_pertahun();
+function pilih_range_pertahun(){
+    let dari_tahun = pertahun_dari_opsi.children[pertahun_dari_opsi.selectedIndex].innerHTML.trim();
+    let ke_tahun = pertahun_ke_opsi.children[pertahun_ke_opsi.selectedIndex].innerHTML.trim();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            ubah_data_chart(this, chart_uang_tahun);
+        }
+    }
+    xhttp.open("GET", "index.php?dari-pertahun=" + dari_tahun + "&ke-pertahun=" + ke_tahun, true);
+    xhttp.send();
+}
+
+function ubah_data_chart(response, chart){
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(response.responseText,'text/xml');
+    let rawLabels = xmlDoc.getElementsByTagName('LABEL');
     let rawDatas = xmlDoc.getElementsByTagName('DATA');
+    let labels = [];
     let datas = [];
 
+    for (let index = 0; index < rawLabels.length; index++) {
+        labels.push(rawLabels[index].innerHTML);
+    }
     for (let index = 0; index < rawDatas.length; index++) {
         datas.push(rawDatas[index].innerHTML);
     }
-    chart_uang_bulan.data.datasets[0].data = datas;
-    chart_uang_bulan.update();
+    if (labels.length > 0){
+        chart.data.labels = labels;
+    }
+    chart.data.datasets[0].data = datas;
+    chart.update();
 }
-
-// function pilih_range_pertahun(){
-//     let dari_tahun = pertahun_dari_opsi.children[pertahun_dari_opsi.selectedIndex].innerHTML.trim();
-//     let ke_tahun = pertahun_ke_opsi.children[pertahun_ke_opsi.selectedIndex].innerHTML.trim();
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function(){
-//         if (this.readyState == 4 && this.status == 200) {
-//             ubah_range_pertahun(this);
-//         }
-//     }
-//     xhttp.open("GET", "index.php?dari-pertahun=" + dari_tahun + "&ke-pertahun=" + ke_tahun, true);
-//     xhttp.send();
-// }
-
-// function ubah_range_pertahun(response){
-
-// }
