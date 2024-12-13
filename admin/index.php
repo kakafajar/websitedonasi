@@ -32,6 +32,37 @@
         echo "</response>";
         exit;
     }
+
+    if (isset($_GET['dari-pertahun'])){
+        $dari_tahun = $_GET['dari-pertahun'];
+        $ke_tahun = $_GET['ke-pertahun'];
+        $datas = [];
+
+        foreach($transaksis as $transaksi){
+            $tahun_transaksi = substr($transaksi->get_tanggal(), 0, 4);
+            
+            if ($tahun_transaksi >= $dari_tahun and $tahun_transaksi <= $ke_tahun) {
+                if (! in_array($tahun_transaksi, array_keys($datas))){
+                    $datas[$tahun_transaksi] = 0;
+                }
+                if ($transaksi->get_status() == "finished"){
+                    $datas[$tahun_transaksi] += $transaksi->get_jumlah();
+                }
+            }
+        }
+
+        header('Content-Type: text/xml; charset=utf-8');
+        echo '<?xml version="1.0" encoding="UTF-8"?>';
+        echo "<response>";
+        foreach(array_keys($datas) as $key){
+            echo "<LABEL>" . $key . "</LABEL>";
+        }
+        foreach($datas as $data){
+            echo "<DATA>" . $data . "</DATA>";
+        }
+        echo "</response>";
+        exit;
+    }
     
     $tahunDonasiList = [];
     foreach($transaksis as $transaksi){

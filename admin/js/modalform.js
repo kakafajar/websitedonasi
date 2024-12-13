@@ -1,3 +1,15 @@
+window.addEventListener('DOMContentLoaded', event => {
+    var datatableHtml = document.getElementById('datatable');
+    if (datatableHtml) {
+        var datatable = new simpleDatatables.DataTable(datatableHtml);
+    }
+
+    if (sessionStorage.getItem('search')){
+        datatable.search(sessionStorage.getItem('search'));
+        sessionStorage.removeItem('search')
+    }
+});
+
 const modalTitle = document.getElementById("modal-title");
 const form = document.getElementById("modal-form");
 const modal = new bootstrap.Modal('#modal', {
@@ -30,6 +42,9 @@ function edit(button){
     let row = button.parentElement.parentElement;
     for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
+        if (element.tagName == "SELECT"){
+            element.value = row.childNodes[index-1].childNodes[1].innerHTML;
+        }
         if (element.tagName == "INPUT"){
             if (element.type != "file"){
                 element.value = row.childNodes[index-1].innerHTML;
