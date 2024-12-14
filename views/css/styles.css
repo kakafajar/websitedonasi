@@ -337,7 +337,7 @@ font-size: 20px; /* Ukuran ikon */
 
 
 #contact {
-  background-color: #d3d3d3;
+  background-image: linear-gradient(to bottom, #ffffff, #c9f8e2);
   padding: 50px 0;
 }
 
@@ -379,20 +379,3 @@ font-size: 20px; /* Ukuran ikon */
   font-size: 14px;
   color: #6c757d;
 }
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
