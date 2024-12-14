@@ -3,7 +3,30 @@
     <header class="parallax-header-tn">
         <h1>DONASI</h1>
     </header>
-    <section class="content-section-tn container my-5">
+    <!-- Jumbotron dengan Kotak -->
+<div class="container" style="margin-top: 100px;">
+    <div class="row align-items-center shadow rounded p-3" style="background-color: #f8f9fa;">
+        <!-- Foto di Sebelah Kiri -->
+        <div class="col-md-4">
+            <img src="views/img/kegiatan14.jpg" alt="Donasi" class="img-fluid rounded" style="max-height: 300px; object-fit: cover;">
+        </div>
+        <!-- Penjelasan di Sebelah Kanan -->
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-3">Kemana Donasi Disalurkan?</h2>
+            <p>
+                Donasi Anda akan disalurkan kepada anak yatim dan dhuafa yang membutuhkan, baik dalam bentuk kebutuhan pokok, pendidikan, maupun perawatan kesehatan. 
+                Setiap donasi kami pastikan sampai kepada mereka yang berhak menerima, untuk menciptakan masa depan yang lebih cerah.
+            </p>
+            <ul>
+                <li>Bantuan kebutuhan pokok bagi anak yatim dan dhuafa.</li>
+                <li>Program pendidikan untuk anak kurang mampu.</li>
+                <li>Fasilitas kesehatan gratis.</li>
+            </ul>
+            <a href="#form-donasi" class="btn btn-primary mt-3">Salurkan Donasi</a>
+        </div>
+    </div>
+</div>
+    <section id="form-donasi" class="content-section-tn container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <div class="p-4 rounded shadow" style="background-color: #f8f9fa;">
