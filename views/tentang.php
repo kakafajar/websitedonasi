@@ -15,7 +15,7 @@
                         <div class="col-md-6">
                             <div class="ms-md-2 ms-lg-5 mt-5 mt-md-0" data-aos="fade-left">
                                 <h2 class="display-5 fw-bold">Tentang Pesantren</h2>
-                                <p class="lead">Pondok Pesantren Sayad Islamic Boarding School adalah lembaga pendidikan Agama yang ber-manhaj Ahluss sunah wal Jama'ah. Dengan mengkombinasikan antara Salaf dan Modern.
+                                <p class="lead" style="text-align: justify;">Pondok Pesantren Sayad Islamic Boarding School adalah lembaga pendidikan Agama yang ber-manhaj Ahluss sunah wal Jama'ah. Dengan mengkombinasikan antara Salaf dan Modern.
                                     Sehingga menjadi Pesantren yang tidak lupa akan metode klasik dan tidak tertinggal pula dengan ke modernisasi. Berdiri pada tahun 2019 dengan satu bangunan , kini ponpes Sayad terus berkembang
                                     dan memiliki beberapa gedung sendiri
                                 </p>
@@ -41,15 +41,15 @@
               <p>Membentuk generasi yang berprestasi dan bermanfaat bagi umat dengan pemahaman pondasi agama.</p>
             </div>
           </div>
-          <div class="col-md-4 text-center mb-4">
+          <div class="col-md-4 mb-4">
             <div class="p-4 shadow rounded h-100"  style="background-color: #FEEC37;">
-              <h3 class="fw-bold">Misi</h3>
+              <h3 class="fw-bold text-center">Misi</h3>
               <p>1. Menyelenggarakan pendidikan yang berjenjang dengan sistem modern <br> 2. Menyelenggarakan dan membentuk jiwa kepemimpinan melalui keorganisaian <br> 3. Membekali santri dengan Praktek amallah sosial <br> 4. Membangun estafet perjuangan dalam tebar kemanfaatan</p>
             </div>
           </div>
-          <div class="col-md-4 text-center mb-4">
+          <div class="col-md-4 mb-4">
             <div class="p-4 shadow rounded h-100"  style="background-color: #FEEC37;">
-              <h3 class="fw-bold">Tujuan</h3>
+              <h3 class="fw-bold text-center">Tujuan</h3>
               <p>Memberikan kesempatan bagi generasi insan islami, yang tidak boleh tertinggal dan kalah karena keadaan.</p>
             </div>
           </div>

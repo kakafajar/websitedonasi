@@ -1,7 +1,7 @@
 <?php
 
-    $smtp_username = "xxx@xxx";
-    $smtp_password = "xxxx";
-    $phpmailer_from = "xxx@gmail.com";
+    $smtp_username = "kakafajar1511@gmail.com";
+    $smtp_password = "rikz fktf trjf lojx";
+    $phpmailer_from = "kakafajar1511@gmail.com";
 
 ?>

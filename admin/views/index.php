@@ -55,22 +55,22 @@
                         <div id="perbulan-options" class='align-items-center'>
                             <label for="" class='me-2'>Tahun</label>
                             <select class="form-select" name="" id="perbulan-tahun-opsi" onchange="pilih_tahun_perbulan(this)">
-                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
-                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php foreach ($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?= $tahunDonasi ?>"><?= $tahunDonasi ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div id="pertahun-options" class='align-items-center'>
                             <label for="">Dari</label>
                             <select class="form-select" name="" id="pertahun-dari-opsi" onchange="pilih_range_pertahun()">
-                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
-                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php foreach ($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?= $tahunDonasi ?>"><?= $tahunDonasi ?></option>
                                 <?php } ?>
                             </select>
                             <label for="">Ke</label>
                             <select class="form-select" name="" id="pertahun-ke-opsi" onchange="pilih_range_pertahun()">
-                                <?php foreach($tahunDonasiList as $tahunDonasi) { ?>
-                                    <option value="<?=$tahunDonasi?>"><?=$tahunDonasi ?></option>
+                                <?php foreach ($tahunDonasiList as $tahunDonasi) { ?>
+                                    <option value="<?= $tahunDonasi ?>"><?= $tahunDonasi ?></option>
                                 <?php } ?>
                             </select>
                         </div>
