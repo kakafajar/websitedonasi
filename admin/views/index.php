@@ -81,9 +81,6 @@
                 <canvas hidden id="chart-uang-bulan" width="100%" height="30"></canvas>
                 <canvas hidden id="chart-uang-tahun" width="100%" height="30">
             </div>
-            <div class="card-footer">
-                Masih Work in progress
-            </div>
         </div>
     </div>
 </section>
