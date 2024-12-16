@@ -10,6 +10,7 @@
             'transaksi_id',
             'donatur',
             'email',
+            'no_hp',
             'id_model',
             'jumlah',
             'pesan',
@@ -21,6 +22,7 @@
         protected $donatur;
         protected $idmodel;
         protected $email;
+        protected $no_hp;
         protected $model;
         protected $jumlah;
         protected $pesan;
@@ -28,10 +30,11 @@
         protected $status;
         protected $tanggal;
 
-        function __construct($id, $donatur, $email, $idmodel, $jumlah, $pesan, $bukti_transfer, $status, $tanggal){
+        function __construct($id, $donatur, $email, $no_hp, $idmodel, $jumlah, $pesan, $bukti_transfer, $status, $tanggal){
             $this->id = $id;
             $this->donatur = $donatur;
             $this->email = $email;
+            $this->no_hp = $no_hp;
             $this->idmodel = $idmodel;
             $this->jumlah = $jumlah;
             $this->pesan = $pesan;
@@ -50,7 +53,8 @@
                 $array[5],
                 $array[6],
                 $array[7],
-                $array[8]
+                $array[8],
+                $array[9]
             );
         }
 
@@ -66,6 +70,10 @@
 
         function get_email(){
             return $this->email;
+        }
+
+        function get_no_hp(){
+            return $this->no_hp;
         }
 
         function get_idmodel(){
