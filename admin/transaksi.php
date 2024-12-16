@@ -6,6 +6,7 @@
     if (isset($_GET['mode'])){
         $nama = $_POST['nama'];
         $email = $_POST['email'];
+        $no_hp = $_POST['no-hp'];
         $idmodel = $_POST['model'];
         $jumlah = $_POST['jumlah'];
         $pesan = $_POST['pesan'];
@@ -15,10 +16,10 @@
         switch ($_GET['mode']){
             case 'add':
                 // date_default_timezone_set('Asia/Bangkok');
-                Transaksi::insert([$nama, $email, $idmodel, $jumlah, $pesan, null, $status, $tanggal]);
+                Transaksi::insert([$nama, $email,$no_hp, $idmodel, $jumlah, $pesan, null, $status, $tanggal]);
                 break;
             case 'edit':
-                Transaksi::update($_POST['id'], [$nama, $email, $idmodel, $jumlah, $pesan, null, $status, $tanggal]);
+                Transaksi::update($_POST['id'], [$nama, $email, $no_hp, $idmodel, $jumlah, $pesan, null, $status, $tanggal]);
                 break;
             case 'delete':
                 Transaksi::delete($_GET['id']);
