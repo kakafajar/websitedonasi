@@ -42,10 +42,10 @@ function edit(button){
     let row = button.parentElement.parentElement;
     for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
-        if (element.tagName == "SELECT"){
+        if (element.tagName == "SELECT" || element.tagName == "TEXTAREA"){
             element.value = row.childNodes[index-1].childNodes[1].innerHTML;
         }
-        if (element.tagName == "INPUT"){
+        else if (element.tagName == "INPUT"){
             if (element.type != "file"){
                 element.value = row.childNodes[index-1].innerHTML;
             }

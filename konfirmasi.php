@@ -10,6 +10,12 @@
     }
 
     $transaksi_id = $_GET['transaksi_id'];
+    $transaksi = Transaksi::get($transaksi_id);
+
+    if ($transaksi->get_bukti_transfer() != ""){
+        header("Location:donasi.php");
+        exit;
+    }
 
     if (isset($_POST['submit-konfirmasi'])){
         $image = $_FILES['image']['name'];
@@ -23,7 +29,7 @@
 
         if($upload) {
             $filepath = "/upload/$randomFilename";
-            Transaksi::update($transaksi_id, [null, null, null, null, null, $filepath, null, null]);
+            Transaksi::update($transaksi_id, [null, null, null, null, null, null, $filepath, null, null]);
             
             header("Location:index.php");
             exit;
@@ -35,7 +41,6 @@
         
     }
     
-    $transaksi = Transaksi::get($transaksi_id);
 
     require_once 'views/layout.php';
     require_once 'views/konfirmasi.php';

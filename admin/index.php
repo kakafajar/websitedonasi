@@ -50,7 +50,8 @@
                 }
             }
         }
-
+        ksort($datas);
+        
         header('Content-Type: text/xml; charset=utf-8');
         echo '<?xml version="1.0" encoding="UTF-8"?>';
         echo "<response>";
@@ -79,6 +80,7 @@
         }
         $total_pending += 1;
     }
+    rsort($tahunDonasiList);
 
     require_once __DIR__ . '/views/layout.php';
     require_once __DIR__ . '/views/index.php';
