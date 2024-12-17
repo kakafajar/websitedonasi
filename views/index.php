@@ -77,35 +77,35 @@
     </div>
   </section>
 
-  <!-- Section Visi Misi dan Tujuan -->
-  <section class="py-5 bg-light" id="vision-mission">
-    <div class="container">
-      <div class="text-center mb-5" data-aos="fade-down">
-        <h2 class="fw-bold">Visi dan Misi</h2>
-        <p class="text-muted">Komitmen kami untuk memberikan dampak positif</p>
+    <!-- Section Visi Misi dan Tujuan -->
+    <section class="py-5 bg-light" id="vision-mission">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-down">
+          <h2 class="fw-bold">Visi dan Misi</h2>
+          <p class="text-muted">Komitmen kami untuk memberikan dampak positif</p>
+        </div>
+        <div class="row" data-aos="zoom-in-up">
+          <div class="col-md-4 text-center mb-4">
+            <div class="p-3 shadow rounded h-100" style="background-color: #FEEC37;">
+              <h3 class="fw-bold">Visi</h3>
+              <p>Membentuk generasi yang berprestasi dan bermanfaat bagi umat dengan pemahaman pondasi agama.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="p-4 shadow rounded h-100"  style="background-color: #FEEC37;">
+              <h3 class="fw-bold text-center">Misi</h3>
+              <p>1. Menyelenggarakan pendidikan yang berjenjang dengan sistem modern <br> 2. Menyelenggarakan dan membentuk jiwa kepemimpinan melalui keorganisaian <br> 3. Membekali santri dengan Praktek amallah sosial <br> 4. Membangun estafet perjuangan dalam tebar kemanfaatan</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="p-4 shadow rounded h-100"  style="background-color: #FEEC37;">
+              <h3 class="fw-bold text-center">Tujuan</h3>
+              <p>Memberikan kesempatan bagi generasi insan islami, yang tidak boleh tertinggal dan kalah karena keadaan.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row" data-aos="zoom-in-up">
-        <div class="col-md-4 text-center mb-4">
-          <div class="p-4 shadow rounded h-100" style="background-color: #FEEC37;">
-            <h3 class="fw-bold">Visi</h3>
-            <p>Membentuk generasi yang berprestasi dan bermanfaat bagi umat dengan pemahaman pondasi agama.</p>
-          </div>
-        </div>
-        <div class="col-md-4 text-center mb-4">
-          <div class="p-4 shadow rounded h-100" style="background-color: #FEEC37;">
-            <h3 class="fw-bold">Misi</h3>
-            <p>1. Menyelenggarakan pendidikan yang berjenjang dengan sistem modern <br> 2. Menyelenggarakan dan membentuk jiwa kepemimpinan melalui keorganisaian <br> 3. Membekali santri dengan Praktek amallah sosial <br> 4. Membangun estafet perjuangan dalam tebar kemanfaatan</p>
-          </div>
-        </div>
-        <div class="col-md-4 text-center mb-4">
-          <div class="p-4 shadow rounded h-100" style="background-color: #FEEC37;">
-            <h3 class="fw-bold">Tujuan</h3>
-            <p>Memberikan kesempatan bagi generasi insan islami, yang tidak boleh tertinggal dan kalah karena keadaan.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- section program -->
   <div class="container py-5" style="margin-top: 100px;">
