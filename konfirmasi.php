@@ -1,5 +1,5 @@
 <?php
-
+ 
     require_once __DIR__ . '/models/transaksi.php';
 
     $title = "Konfirmasi";
@@ -18,6 +18,8 @@
     }
 
     if (isset($_POST['submit-konfirmasi'])){
+        require_once __DIR__ . '/functions.php';
+
         $image = $_FILES['image']['name'];
         $tempImage = $_FILES['image']['tmp_name'];
 
@@ -31,17 +33,12 @@
             $filepath = "/upload/$randomFilename";
             Transaksi::update($transaksi_id, [null, null, null, null, null, null, $filepath, null, null]);
             
-            header("Location:index.php");
-            exit;
+            swal('Upload Bukti Transfer Berhasil!', 'Terima kasih atas Donasinya', 'success', 'index.php');
         } else {
-            print_r($_FILES['image']['error']);
-            $msg = "gagal upload";
-            exit;
+            swal('Upload Bukti Transfer Gagal!', "error : {$_FILES['image']['error']}. kontak admin", 'warning', 'self');
         }
-        
     }
     
-
     require_once 'views/layout.php';
     require_once 'views/konfirmasi.php';
 
