@@ -1,3 +1,45 @@
+<style>
+  /* Styling the container for horizontal scrolling */
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for cleaner UI */
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Card styles */
+.card {
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  width: 18rem;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+</style>
 <section id="content">
  <!-- Carousel -->
 <div id="carouselExampleCaptions" class="carousel slide">
@@ -56,7 +98,7 @@
 
 
   <!-- About -->
-  <section class="py-5 mt-5" id="about">
+  <section class="py-5 mt-2" id="about">
     <div class="p-3" style="background-color: #fff;">
       <div class="container">
         <div class="row gx-4 align-items-center">
@@ -112,59 +154,42 @@
     <h1 class="text-center mb-5">Program Saung Do'a Anak Yatim Dhuafa</h1>
     <div class="row g-4">
 
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card program-card" data-aos="zoom-in">
-          <div class="image-container">
-            <img src="views/img/program.jpg" class="card-img-top" alt="Program 1">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Program lelang wakaf</h5>
-            <p class="card-text">untuk pembangunan ponpes tahfidz kampoeng Quran</p>
-          </div>
-        </div>
+<div class="card-container">
+  <!-- Card 1 -->
+  <div class="card" style="width: 18rem; margin: 5px;">
+      <img src="views/img/program.jpg" class="card-img-top" alt="...">
+      <div class="card-body" >
+        <p class="card-text">PROGRAM LELANG WAKAf untuk pembangunan ponpes tahfidz kampoeng qur'anp>
       </div>
+    </div>
 
       <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card program-card" data-aos="zoom-in">
-          <div class="image-container">
-            <img src="views/img/program2.jpg" class="card-img-top" alt="Program 2">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Program Agenda Mingguan</h5>
-            <p class="card-text">Doa Bersama Setiap Jum'at sore</p>
-          </div>
-        </div>
+          <div class="card" style="width: 18rem; margin: 5px;">
+      <img src="views/img/program2.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Program Agenda Mingguan, Doa bersama setiap jum'at sore</p>
       </div>
+    </div>
 
       <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card program-card" data-aos="zoom-in">
-          <div class="image-container">
-            <img src="views/img/program3.jpg" class="card-img-top" alt="Program 3">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Agenda Tahunan</h5>
-            <p class="card-text">Berbagi bersama para jompo dan dhuafa</p>
-          </div>
-        </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+      <img src="views/img/program3.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Agenda Tahunan, Berbagi bersama para jompo</p>
       </div>
+    </div>
 
       <!-- Card 4 -->
-      <div class="col-md-4">
-        <div class="card program-card" data-aos="zoom-in">
-          <div class="image-container">
-            <img src="views/img/program4.jpg" class="card-img-top" alt="Program 4">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Program Agenda Tahunan "SBS"</h5>
-            <p class="card-text">Berbagi Bersama 1000 Yatim</p>
-          </div>
-        </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+      <img src="views/img/program4.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Agenda Tahunan "SBS", Berbagi bersama seribu yatim</p>
       </div>
-
     </div>
+
+  </div>
+
+  </div>
   </div>
 
   <!-- Contact Section -->
@@ -191,7 +216,7 @@
           </form>
         </div>
         <div class="col-md-6">
-          <h4 class="text-center mb-3">Temukan Kami Disini</h4>
+          <h4 class="text-center mb-3 mt-5">Temukan Kami Disini</h4>
           <div class="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.4469097176075!2d107.36786359999999!3d-6.336110199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69773a23c1eeab%3A0x246119582e2fc27b!2sSaung%20Anak%20Yatim%20dan%20Dhuafa%20Karawang!5e0!3m2!1sid!2sid!4v1732696653970!5m2!1sid!2sid"
