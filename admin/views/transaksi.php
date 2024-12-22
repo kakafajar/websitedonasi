@@ -134,6 +134,20 @@
             </div>
             <div class="card-body">
                 <button class="btn btn-primary mb-3" onclick="add()">Add Data</button>
+                <form action="" method="get" class="mb-3">
+                    <div class="d-flex ">
+                        <div class="d-flex me-2 align-items-center">
+                            <label for="from">Dari</label>
+                            <input type="date" id="from" name="from" class="form-control" value="<?php echo  isset($_GET['from'])?$_GET['from']  : '' ?>">
+                        </div>
+                        <div class="d-flex me-2 align-items-center">
+                            <label for="to">Ke</label>
+                            <input type="date" id="to" name="to" class="form-control" value="<?php echo isset($_GET['to']) ? $_GET['to'] : '' ?>">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
+                </form>
+                
                 <table id="datatable">
                     <thead>
                         <th>Id</th>
