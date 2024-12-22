@@ -35,7 +35,6 @@
         </div>
     </div>
 </div>
-<script src='js/modalform.js'></script>
 
 <section id="content">
     <div class="container-fluid px-4">
@@ -50,8 +49,20 @@
             </div>
             <div class="card-body">
                 <button class="btn btn-primary mb-3" onclick="add()">Add Data</button>
+                <div class="mb-3 align-items-center" id="selected-options" style="display:none;">
+                    <button class="btn btn-danger me-2" onclick="delete_all_selected(this)">
+                        <form action="?mode=deleteselected" method="post" style="display:none;">
+                            <input type="text" name="ids">
+                        </form>
+                        Delete yang dipilih
+                    </button>
+                    <h6 id="selected-counters">x25</h6>
+                </div>
                 <table id="datatable">
                     <thead>
+                        <th>
+                            <input class="form-check-input" type="checkbox" onclick="select_all_checkbox(this)">
+                        </th>
                         <th>Id</th>
                         <th>Username</th>
                         <th>Password</th>
@@ -60,6 +71,9 @@
                     <tbody>
                         <?php foreach($users as $user) { ?>
                             <tr>
+                                <td>
+                                    <input class="form-check-input selected-checkbox" type="checkbox" onclick="selected_changed(this, '<?=$user->get_id()?>')">
+                                </td>
                                 <td><?=$user->get_id()?></td>
                                 <td><?=$user->get_username()?></td>
                                 <td><?=$user->get_password()?></td>
@@ -78,3 +92,4 @@
         </div>
     </div>
 </section>
+<script src='js/modalform.js'></script>

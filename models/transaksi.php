@@ -107,6 +107,39 @@
             return $this->tanggal;
         }
 
+        public static function get_from_date_range($from, $to=''){
+            global $conn;
+            $datas = [];
+
+            if ($to != ''){
+                if ($from != ''){
+                    $sql = "SELECT * FROM transaksi WHERE tanggal BETWEEN '$from' AND '$to'";
+                }
+                else{
+                    $sql = "SELECT * FROM transaksi WHERE tanggal <= '$to'";
+                }
+            } else{
+                $sql = "SELECT * FROM transaksi WHERE tanggal >= '$from'";
+            }
+            $query = $conn->query($sql);
+            if ($query->num_rows > 0){
+                foreach ($query->fetch_all() as $raw_data){
+                    $datas[] = static::from_array($raw_data);
+                }
+            }
+
+            return $datas;
+        }
+
+        public static function update_status_from_array($ids, $status){
+            global $conn;
+            
+            $ids_imploded = implode(',', $ids);
+            
+            $sql = "UPDATE transaksi SET status='$status' WHERE transaksi_id IN ($ids_imploded)";
+            $query = $conn->query($sql);
+        }
+
     }
 
 ?>

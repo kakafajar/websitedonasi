@@ -21,15 +21,31 @@
             case 'edit':
                 Transaksi::update($_POST['id'], [$nama, $email, $no_hp, $idmodel, $jumlah, $pesan, null, $status, $tanggal]);
                 break;
+            case 'edit_status_selected':
+                Transaksi::update_status_from_array(json_decode($_POST['ids']), $_POST['status']);
+                break;
             case 'delete':
                 Transaksi::delete($_GET['id']);
+                break;
+            case 'deleteselected':
+                Transaksi::delete_from_array(json_decode($_POST['ids']));
                 break;
         }
         header("Location:" . basename(__FILE__, '.php') . ".php");
     }
 
     $title = "Transaksi";
-    $transactions = Transaksi::get_all();
+    $transactions = [];
+    if (isset($_GET['from']) or isset($_GET['to'])){
+        echo "yes";
+        $from = isset($_GET['from']) ? $_GET['from'] : '';
+        $to = isset($_GET['to']) ? $_GET['to'] : '' ;
+        
+        $transactions = Transaksi::get_from_date_range($from, $to);
+    }
+    else{
+        $transactions = Transaksi::get_all();
+    }
     $models = ModelPembayaran::get_all();
     
     require_once __DIR__ . '/views/layout.php';
