@@ -13,6 +13,9 @@
             case 'delete':
                 User::delete($_GET['id']);
                 break;
+            case 'deleteselected':
+                User::delete_from_array(json_decode($_POST['ids']));
+                break;
         }
         header("Location:" . basename(__FILE__, '.php') . ".php");
     }

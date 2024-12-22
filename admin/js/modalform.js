@@ -1,7 +1,14 @@
 window.addEventListener('DOMContentLoaded', event => {
     var datatableHtml = document.getElementById('datatable');
     if (datatableHtml) {
-        var datatable = new simpleDatatables.DataTable(datatableHtml);
+        var datatable = new simpleDatatables.DataTable(datatableHtml, {
+            columns : [
+                {
+                    select : 0,
+                    sortable : false    
+                }
+            ]
+        });
     }
 
     if (sessionStorage.getItem('search')){
@@ -15,6 +22,11 @@ const form = document.getElementById("modal-form");
 const modal = new bootstrap.Modal('#modal', {
     keyboard: false
 });
+
+var selected_options = document.getElementById("selected-options");
+var selected_counters = document.getElementById("selected-counters");
+
+var selecteds = [];
 
 document.getElementById("submit-button").addEventListener('click', process_submit);
 let modal_mode = 'add';
@@ -42,12 +54,14 @@ function edit(button){
     let row = button.parentElement.parentElement;
     for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
+        const tableElement = row.childNodes[index];
+
         if (element.tagName == "SELECT" || element.tagName == "TEXTAREA"){
-            element.value = row.childNodes[index-1].childNodes[1].innerHTML;
+            element.value = tableElement.childNodes[1].innerHTML;
         }
         else if (element.tagName == "INPUT"){
             if (element.type != "file"){
-                element.value = row.childNodes[index-1].innerHTML;
+                element.value = tableElement.innerHTML;
             }
         }
     }
@@ -89,6 +103,52 @@ function erase(button){
                 }
             });
             aElement.click();
+        }
+    });
+}
+
+function selected_changed(tag, id){
+    if (tag.checked == true && selecteds.indexOf(id) == -1){
+        selecteds.push(id);
+    }else{
+        selecteds.splice(selecteds.indexOf(id), 1);
+    }
+
+    selected_counters.innerText = "x" + selecteds.length;
+    if (selecteds.length > 0){
+        selected_options.style.display = "flex";
+    }else{
+        selected_options.style.display = "none";
+    }
+}
+
+function select_all_checkbox(tag){
+    let all_selecteds = Array.from(document.getElementsByClassName("selected-checkbox"));
+    
+    all_selecteds.forEach(element => {
+        if (tag.checked != element.checked){
+            element.click();
+        }
+    });
+}
+
+function delete_all_selected(button){
+    swal({
+        title : "Apakah anda yakin ingin menghapus semua data?",
+        text : "data sebanyak x"+ selecteds.length +" akan hilang",
+        icon : "warning",
+        buttons : true,
+        dangerMode : true,
+    }).then((clicked) => {
+        if (clicked){
+            button.childNodes.forEach(element => {
+                console.log(element.tagName);
+                
+                if (element.tagName == "FORM"){
+                    element.childNodes[1].value = JSON.stringify(selecteds);
+                    element.submit();
+                }
+            });
         }
     });
 }

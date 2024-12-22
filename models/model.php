@@ -78,6 +78,16 @@
             $query = $conn->query($sql);
         }
 
+
+        public static function delete_from_array($ids){
+            global $conn;
+
+            $ids_imploded = implode(',', $ids);
+
+            $sql = "DELETE FROM " . static::$table_name . " WHERE " . static::$columns[0] . " IN ($ids_imploded)";
+            $query = $conn->query($sql);
+        }
+
     }
 
 ?>
