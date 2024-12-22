@@ -107,7 +107,7 @@
             return $this->tanggal;
         }
 
-        static function get_from_date_range($from, $to=''){
+        public static function get_from_date_range($from, $to=''){
             global $conn;
             $datas = [];
 
@@ -129,6 +129,15 @@
             }
 
             return $datas;
+        }
+
+        public static function update_status_from_array($ids, $status){
+            global $conn;
+            
+            $ids_imploded = implode(',', $ids);
+            
+            $sql = "UPDATE transaksi SET status='$status' WHERE transaksi_id IN ($ids_imploded)";
+            $query = $conn->query($sql);
         }
 
     }
