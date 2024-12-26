@@ -1,3 +1,4 @@
+<!-- UNtuk warna pending (merah) dan confirmed (hijau) -->
 <style>
     tr:has(td):has(value.row-pending){
         /* border-color:rgb(142, 142, 142); */
@@ -8,6 +9,7 @@
         background-image:linear-gradient(to top, rgba(167, 255, 214, 0.62), white);
     }
 </style>
+<link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.5.4/css/dataTables.dateTime.min.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="modal fade" tabindex="-1" id="modal">
     <div class="modal-dialog modal-dialog-centered">
@@ -27,17 +29,17 @@
                             
                             <label for="form-donatur">Donatur</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-nama" name="nama">
+                                <input class="form-control" type="text" id="form-nama" name="nama" required>
                             </div>
                             
                             <label for="form-email">Email</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-email" name="email">
+                                <input class="form-control" type="text" id="form-email" name="email" required>
                             </div>
 
                             <label for="form-no-hp">No HP</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-no-hp" name="no-hp">
+                                <input class="form-control" type="text" id="form-no-hp" name="no-hp" required>
                             </div>
 
                             <label for="form-model">Model Pembayaran</label>
@@ -51,7 +53,7 @@
 
                             <label for="form-jumlah">Jumlah</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-jumlah" name="jumlah">
+                                <input class="form-control" type="text" id="form-jumlah" name="jumlah" required>
                             </div>
                             
                             <label for="form-pesan">Pesan</label>
@@ -96,16 +98,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="container" id="modal-other-container">
+                <div class="container align-items-center" id="modal-other-container">
                     <p id="pesan-content"></p>
-                    <img id="bukti-transfer-img" src="" alt="" height="500px">
-                    <form action="?mode=edit_status_selected" method="post" id="status-in-other">
+                    <img id="bukti-transfer-img" class="img-fluid" src="" alt="">
+                    <form action="?mode=edit_status_all_selected" method="post" id="status-in-other">
                         <input type="text" name="ids" style="display:none">
                         <select class="form-select" name="status" id="form-status">
                             <option value="pending">Pending</option>
                             <option value="finished">Confirmed</option>
                         </select>
-                        <button type="button" class="btn btn-primary w-100 mt-2" onclick="process_edit_status()">Save</button>
+                        <button type="button" class="btn btn-primary w-100 mt-2" id="submit-form-status-btn">Save</button>
                     </form>
                 </div>
             </div>
@@ -125,34 +127,31 @@
                 
             </div>
             <div class="card-body">
-                <button class="btn btn-primary mb-3" onclick="add()">Add Data</button>
-                <form action="" method="get" class="mb-3">
-                    <div class="d-flex ">
-                        <div class="d-flex me-2 align-items-center">
-                            <label for="from">Dari</label>
-                            <input type="date" id="from" name="from" class="form-control" value="<?php echo  isset($_GET['from'])?$_GET['from']  : '' ?>">
-                        </div>
-                        <div class="d-flex me-2 align-items-center">
-                            <label for="to">Ke</label>
-                            <input type="date" id="to" name="to" class="form-control" value="<?php echo isset($_GET['to']) ? $_GET['to'] : '' ?>">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Filter</button>
+                <div class="d-flex mb-3">
+                    <button class="btn btn-primary" id="add-data-btn" >Add Data</button>
+                    <button class="btn btn-secondary" id="export-csv-btn">Export CSV</button>
+                </div>
+                <div class="d-flex ">
+                    <div class="d-flex me-2 align-items-center">
+                        <label for="from">Dari</label>
+                        <input type="text" id="from-date" class="form-control">
                     </div>
-                </form>
+                    <div class="d-flex me-2 align-items-center">
+                        <label for="to">Ke</label>
+                        <input type="text" id="to-date" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="filter-date-btn">Filter</button>
+                    <button type="button" class="btn btn-primary" id="clear-filter-date-btn">Clear</button>
+                </div>
                 <div class="mb-3 align-items-center" id="selected-options" style="display:none;">
-                    <button class="btn btn-danger" onclick="delete_all_selected(this)">
-                        <form action="?mode=deleteselected" method="post" style="display:none;">
-                            <input type="text" name="ids">
-                        </form>
-                        Delete yang dipilih
-                    </button>
-                    <button class="btn btn-primary me-2" onclick="edit_status_selected()">Edit Status yang dipilih</button>
+                    <button class="btn btn-danger" id="delete-all-btn" href="?mode=delete_all_selected">Delete yang dipilih</button>
+                    <button class="btn btn-primary me-2" id="edit-all-btn">Edit Status yang dipilih</button>
                     <h6 id="selected-counters">x25</h6>
                 </div>
-                <table id="datatable">
+                <table id="datatablehtml" class="table cell-border hover">
                     <thead>
                         <th>
-                            <input class="form-check-input" type="checkbox" onclick="select_all_checkbox(this)">
+                            <input class="form-check-input" type="checkbox" id="all-data-checkbox">
                         </th>
                         <th>Id</th>
                         <th>Donatur</th>
@@ -170,30 +169,27 @@
                         <?php foreach($transactions as $transaction) { ?>
                             <tr>
                                 <td>
-                                    <input class="form-check-input selected-checkbox" type="checkbox" onclick="selected_changed(this, '<?=$transaction->get_id()?>')">
+                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox" data-id="<?=$transaction->get_id()?>">
                                 </td>
                                 <td><?=$transaction->get_id()?></td>
                                 <td><?=$transaction->get_donatur()?></td>
                                 <td><?=$transaction->get_email()?></td>
                                 <td><?=$transaction->get_no_hp()?></td>
                                 <td>
-                                    <value style="display:none;"><?=$transaction->get_model()->get_id()?></value>
+                                    <value style="display:none;" forcsv="<?=$transaction->get_model()->get_nama()?>"><?=$transaction->get_model()->get_id()?></value>
                                     <a href="" onclick="search_on_table(this, '<?=$transaction->get_model()->get_id()?>', 'modelpembayaran.php')"><?=$transaction->get_model()->get_nama()?></a>
                                 </td>
                                 <td><?=$transaction->get_jumlah()?></td>
                                 <td>
                                     <value style="display:none;"><?=$transaction->get_pesan()?></value>
-                                    <button class="btn btn-primary" onclick="
-                                        showmsg(this)
-                                    ">Show</button>
+                                    <button class="btn btn-primary" id="show-msg-btn">Show</button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary" 
-                                    onclick="
-                                    showimg('../<?= $transaction->get_bukti_transfer() ?>')
-                                    ">Show</button>
+                                    <button class="btn btn-primary" img="../<?= $transaction->get_bukti_transfer() ?>"
+                                    id="show-img-btn">Show</button>
                                 </td>
                                 <td>
+                                    <!-- class untuk menambahkan warna -->
                                     <value class="
                                         <?php if ($transaction->get_status() == 'pending') {?>
                                             row-pending
@@ -204,11 +200,8 @@
                                 </td>
                                 <td><?=$transaction->get_tanggal()?></td>
                                 <td>
-                                    <button class="btn btn-primary" onclick="edit(this)">Edit</button>
-                                    <button class="btn btn-danger" onclick="erase(this)">
-                                        <a href="?mode=delete&id=<?=$transaction->get_id()?>" onclick="event.stopPropagation()"></a>
-                                        Hapus
-                                    </button>
+                                    <button class="btn btn-primary" id="edit-data-btn">Edit</button>
+                                    <button class="btn btn-danger" id="delete-data-btn" href="?mode=delete&id=<?=$transaction->get_id()?>">Hapus</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -219,71 +212,6 @@
     </div>
 </section>
 <script src='js/modalform.js'></script>
-<script>
-    const modal_other = new bootstrap.Modal('#modal-other', { keyboard:false});
-    const modal_other_title = document.getElementById("modal-other-title");
-    const modal_other_container = document.getElementById("modal-other-container");
-
-    const bukti_transfer_img = document.getElementById("bukti-transfer-img");
-    const pesan_content = document.getElementById("pesan-content");
-    const status_in_other = document.getElementById("status-in-other");
-
-    function reset_modal_other(){
-        modal_other_container.childNodes.forEach(element => {
-            if (element.nodeType != Node.TEXT_NODE){
-                element.style.display = "none";
-            }
-        });
-    }
-
-    function showimg(url){
-        reset_modal_other();
-        pesan_content.style.display = "block";
-        pesan_content.innerText = "Bukti Transfer tidak ada.";
-        if (url != '../'){
-            bukti_transfer_img.style.display = "block";
-            bukti_transfer_img.src = url;
-        }
-        
-        modal_other_title.innerText = "Bukti Transfer";
-        modal_other.show();
-    }
-
-    function showmsg(tag){
-        reset_modal_other();
-        pesan_content.style.display = "block";
-        pesan_content.innerText = tag.parentElement.childNodes[1].innerText;
-        if (pesan_content.innerText == ""){
-            pesan_content.innerText = "Pesan tidak ada.";
-        }
-        
-        modal_other_title.innerText = "Pesan Donatur";
-        modal_other.show();
-    }
-
-    function edit_status_selected(){
-        reset_modal_other();
-        status_in_other.style.display="block";
-        
-        status_in_other.childNodes[1].value = JSON.stringify(selecteds);
-        console.log(status_in_other.childNodes[1].value);
-        
-        modal_other_title.innerText = "Edit Status yang diselect";
-        modal_other.show();
-    }
-
-    function process_edit_status(){
-        swal({
-            title : "Apakah anda yakin ingin mengedit semua data?",
-            text : "Anda akan mengedit data sebanyak x" + selecteds.length,
-            icon : "warning",
-            buttons : true,
-            dangerMode : true,
-        }).then((clicked) => {
-            if (clicked){
-                status_in_other.submit();
-            }
-        });
-    }
-
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.5.4/js/dataTables.dateTime.min.js"></script>
+<script src="js/transaksi.js"></script>

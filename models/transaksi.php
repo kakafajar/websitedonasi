@@ -127,7 +127,10 @@
                     $datas[] = static::from_array($raw_data);
                 }
             }
-
+            
+            if(! $query){
+                throw new Exception($conn->error);
+            }
             return $datas;
         }
 
@@ -138,6 +141,10 @@
             
             $sql = "UPDATE transaksi SET status='$status' WHERE transaksi_id IN ($ids_imploded)";
             $query = $conn->query($sql);
+            
+            if(! $query){
+                throw new Exception($conn->error);
+            }
         }
 
     }

@@ -58,7 +58,7 @@
                     </div>
                     <p class="mb-0 mt-5">silakan melakukan transfer, lalu kirim bukti transfer ke input dibawah ini.</p>
                     <p>(link halaman ini akan dikirim ke email anda)</p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data" id="form-konfirmasi">
                         <div class="row row-cols-2 align-items-center">
                             <div class="col text-start">
                                 <label for="">Bukti Transfer</label>
@@ -68,10 +68,11 @@
                             </div>
                             <div></div>
                         </div>
-                        <button class="btn btn-success px-5 py-3 fs-4 fw-bold mt-3" type="submit" name="submit-konfirmasi">Konfirmasi</button>
+                        <button class="btn btn-success px-5 py-3 fs-4 fw-bold mt-3" type="button" id="submit-btn" name="submit-konfirmasi">Konfirmasi</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 </section>
+<script src="views/js/konfirmasi.js"></script>

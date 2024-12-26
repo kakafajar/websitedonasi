@@ -1,9 +1,8 @@
 <?php 
     $title = "";
 
-    if (isset($_POST['submit-message'])) {
+    if (isset($_POST['email'])) {
         require_once __DIR__ . '/phpmailer.php';
-        require_once __DIR__ . '/functions.php';
 
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
@@ -27,10 +26,11 @@
             
             $mail->send();
             
-            swal('Pesan telah dikirim', '', 'success', 'self');
         } catch (Exception $e) {
-            swal("Pesan tidak bisa dikirim", "Phpmailer error : {$mail->ErrorInfo}. kontak admin.", 'warning', 'self');
+            http_response_code(500);
+            echo json_encode($mail->ErrorInfo);
         }
+        exit;
     }
 
     require_once "views/layout.php";

@@ -31,7 +31,7 @@
         <div class="col-md-8">
         <div class="p-4 rounded shadow" style="background-color: #f8f9fa;">
             <h2 class="text-center mb-4">Formulir Donasi</h2>
-            <form action="" method="POST">
+            <form action="" method="POST" id="real-form-donasi">
                 <div class="mb-3 text-start">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
@@ -85,7 +85,7 @@
                     <input type="number" class="form-control" id="jumlah_manual" name="jumlah_manual" placeholder="Masukkan jumlah donasi">
                 </div>
                 <div class="text-center">
-                    <button type="submit" name="submit-donasi" class="btn btn-success px-5 py-3 fs-4 fw-bold">Kirim Donasi</button>
+                    <button type="submit" id="submit-btn" name="submit-donasi" class="btn btn-success px-5 py-3 fs-4 fw-bold">Kirim Donasi</button>
                 </div>
             </form>
         </div>
@@ -93,23 +93,5 @@
     </div>
     </section>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const donasiLainnya = document.getElementById('donasiLainnya');
-    const inputLainnya = document.getElementById('inputLainnya');
-    const jumlahManual = document.getElementById('jumlah_manual');
-
-    document.querySelectorAll('input[name="jumlah_donasi"]').forEach(radio => {
-        radio.addEventListener('change', function () {
-        if (donasiLainnya.checked) {
-            inputLainnya.style.display = 'block';
-            jumlahManual.required = true;
-        } else {
-            inputLainnya.style.display = 'none';
-            jumlahManual.required = false;
-            jumlahManual.value = '';
-        }
-        });
-    });
-});
+<script src="views/js/donasi.js"><script>
 </script>

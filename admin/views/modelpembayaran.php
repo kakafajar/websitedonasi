@@ -17,12 +17,12 @@
                             
                             <label for="form-nama">Nama</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-nama" name="nama">
+                                <input class="form-control" type="text" id="form-nama" name="nama" required>
                             </div>
                             
                             <label for="form-keterangan">Keterangan</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-keterangan" name="keterangan">
+                                <input class="form-control" type="text" id="form-keterangan" name="keterangan" required>
                             </div>
                         </div>
                     </div>
@@ -48,20 +48,17 @@
                 
             </div>
             <div class="card-body">
-                <button class="btn btn-primary mb-3" onclick="add()">Add Data</button>
+                <button class="btn btn-primary mb-3" id="add-data-btn">Add Data</button>
                 <div class="mb-3 align-items-center" id="selected-options" style="display:none;">
-                    <button class="btn btn-danger me-2" onclick="delete_all_selected(this)">
-                        <form action="?mode=deleteselected" method="post" style="display:none;">
-                            <input type="text" name="ids">
-                        </form>
+                    <button class="btn btn-danger me-2" id="delete-all-btn">
                         Delete yang dipilih
                     </button>
                     <h6 id="selected-counters">x25</h6>
                 </div>
-                <table id="datatable">
+                <table id="datatablehtml">
                     <thead>
                         <th>
-                            <input class="form-check-input" type="checkbox" onclick="select_all_checkbox(this)">
+                            <input class="form-check-input" type="checkbox" id="all-data-checkbox">
                         </th>
                         <th>Id</th>
                         <th>Nama</th>
@@ -72,15 +69,14 @@
                         <?php foreach($models as $model) { ?>
                             <tr>
                                 <td>
-                                    <input class="form-check-input selected-checkbox" type="checkbox" onclick="selected_changed(this, '<?=$model->get_id()?>')">
+                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox">
                                 </td>
                                 <td><?=$model->get_id()?></td>
                                 <td><?=$model->get_nama()?></td>
                                 <td><?=$model->get_keterangan()?></td>
                                 <td>
-                                    <button class="btn btn-primary" onclick="edit(this)">Edit</button>
-                                    <button class="btn btn-danger" onclick="erase(this)">
-                                        <a href="?mode=delete&id=<?=$model->get_id()?>" onclick="event.stopPropagation()"></a>
+                                    <button class="btn btn-primary" id="edit-data-btn">Edit</button>
+                                    <button class="btn btn-danger" id="delete-data-btn" data-id="<?=$model->get_id()?>">
                                         Hapus
                                     </button>
                                 </td>
