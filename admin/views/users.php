@@ -69,7 +69,7 @@
                         <?php foreach($users as $user) { ?>
                             <tr>
                                 <td>
-                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox">
+                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox" data-id="<?=$user->get_id()?>">
                                 </td>
                                 <td><?=$user->get_id()?></td>
                                 <td><?=$user->get_username()?></td>

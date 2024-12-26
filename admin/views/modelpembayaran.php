@@ -69,7 +69,7 @@
                         <?php foreach($models as $model) { ?>
                             <tr>
                                 <td>
-                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox">
+                                    <input class="form-check-input selected-checkbox" type="checkbox" id="data-checkbox" data-id="<?=$model->get_id()?>">
                                 </td>
                                 <td><?=$model->get_id()?></td>
                                 <td><?=$model->get_nama()?></td>
