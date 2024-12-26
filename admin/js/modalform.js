@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     if (sessionStorage.getItem('search')){
-        datatable.search(sessionStorage.getItem('search'));
+        datatable.search(sessionStorage.getItem('search')).draw();
         sessionStorage.removeItem('search')
     }
 });
