@@ -5,19 +5,43 @@
     if (isset($_GET['mode'])){
         switch ($_GET['mode']){
             case 'add':
-                ModelPembayaran::insert([$_POST['nama'], $_POST['keterangan']]);
+                try{
+                    ModelPembayaran::insert([$_POST['nama'], $_POST['keterangan']]);
+                }
+                catch(Exception $e){
+                    http_response_code(500);
+                    echo json_encode($conn->error);
+                }
                 break;
             case 'edit':
-                ModelPembayaran::update($_POST['id'], [$_POST['nama'], $_POST['keterangan']]);
+                try{
+                    ModelPembayaran::update($_POST['id'], [$_POST['nama'], $_POST['keterangan']]);
+                }
+                catch(Exception $e){
+                    http_response_code(500);
+                    echo json_encode($conn->error);
+                }
                 break;
             case 'delete':
-                ModelPembayaran::delete($_GET['id']);
+                try{
+                    ModelPembayaran::delete($_GET['id']);
+                }
+                catch(Exception $e){
+                    http_response_code(500);
+                    echo json_encode($conn->error);
+                }
                 break;
             case 'deleteselected':
-                ModelPembayaran::delete_from_array(json_decode($_POST['ids']));
+                try{
+                    ModelPembayaran::delete_from_array(json_decode($_POST['ids']));
+                }
+                catch(Exception $e){
+                    http_response_code(500);
+                    echo json_encode($conn->error);
+                }
                 break;
         }
-        header("Location:" . basename(__FILE__, '.php') . ".php");
+        exit;
     }
 
     $title = "Model Pembayaran";

@@ -27,10 +27,11 @@
             
             $mail->send();
             
-            swal('Pesan telah dikirim', '', 'success', 'self');
         } catch (Exception $e) {
-            swal("Pesan tidak bisa dikirim", "Phpmailer error : {$mail->ErrorInfo}. kontak admin.", 'warning', 'self');
+            http_response_code(500);
+            echo json_encode($mail->ErrorInfo);
         }
+        exit;
     }
 
     require_once "views/layout.php";

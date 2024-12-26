@@ -23,13 +23,16 @@
             global $conn;
             $data = null;
 
-            $result = $conn->query("SELECT * FROM " . static::$table_name . " WHERE " . static::$columns[0] . "=$id");
-            if ($result->num_rows > 0){
-                $rawdata = $result->fetch_all()[0];
+            $query = $conn->query("SELECT * FROM " . static::$table_name . " WHERE " . static::$columns[0] . "=$id");
+            if ($query->num_rows > 0){
+                $rawdata = $query->fetch_all()[0];
 
                 $data = static::from_array($rawdata);
             }
-
+            
+            if(! $query){
+                throw new Exception($conn->error);
+            }
             return $data;
         }
         
@@ -43,7 +46,10 @@
                     $datas[] = static::from_array($raw_data);
                 }
             }
-            
+
+            if(! $query){
+                throw new Exception($conn->error);
+            }
             return $datas;
         }
 
@@ -54,6 +60,10 @@
             $sql = "INSERT INTO " . static::$table_name . " VALUES (null, $formatted_array )";
             
             $query = $conn->query($sql);
+            
+            if(! $query){
+                throw new Exception($conn->error);
+            }
         }
 
         public static function update($id, $array){
@@ -69,6 +79,10 @@
             }
             $sql = "UPDATE " . static::$table_name . " SET " . implode(',', $set_params) . " WHERE " . static::$columns[0] .  "=$id ";
             $query = $conn->query($sql);
+
+            if(! $query){
+                throw new Exception($conn->error);
+            }
         }
 
         public static function delete($id){
@@ -76,16 +90,24 @@
 
             $sql = "DELETE FROM " . static::$table_name . " WHERE " . static::$columns[0] . "=$id";
             $query = $conn->query($sql);
+
+            if(! $query){
+                throw new Exception($conn->error);
+            }
         }
 
 
         public static function delete_from_array($ids){
             global $conn;
-
+            
             $ids_imploded = implode(',', $ids);
 
             $sql = "DELETE FROM " . static::$table_name . " WHERE " . static::$columns[0] . " IN ($ids_imploded)";
             $query = $conn->query($sql);
+
+            if(! $query){
+                throw new Exception($conn->error);
+            }
         }
 
     }
