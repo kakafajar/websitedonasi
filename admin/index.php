@@ -1,15 +1,10 @@
 <?php
 
     require_once __DIR__ . '/../models/transaksi.php';
-
-    $title = "Dashboard";
-
-    $total_donasi_uang = 0;
-    $total_pending = 0;
-    $total_konfirmasi = 0;
     
     $transaksis = Transaksi::get_all();
     
+    // AJAX
     if (isset($_GET['tahun-perbulan'])){
         $tahun = $_GET['tahun-perbulan'];
         $datas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -64,6 +59,13 @@
         echo "</response>";
         exit;
     }
+    // AJAX END
+
+    $title = "Dashboard";
+
+    $total_donasi_uang = 0;
+    $total_pending = 0;
+    $total_konfirmasi = 0;
     
     $tahunDonasiList = [];
     foreach($transaksis as $transaksi){
