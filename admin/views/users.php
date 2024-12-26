@@ -17,12 +17,12 @@
                             
                             <label for="form-username">Username</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-username" name="username">
+                                <input class="form-control" type="text" id="form-username" name="username" required>
                             </div>
                             
                             <label for="form-password">Password</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-password" name="password">
+                                <input class="form-control" type="text" id="form-password" name="password" required>
                             </div>
                         </div>
                     </div>

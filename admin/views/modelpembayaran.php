@@ -17,12 +17,12 @@
                             
                             <label for="form-nama">Nama</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-nama" name="nama">
+                                <input class="form-control" type="text" id="form-nama" name="nama" required>
                             </div>
                             
                             <label for="form-keterangan">Keterangan</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-keterangan" name="keterangan">
+                                <input class="form-control" type="text" id="form-keterangan" name="keterangan" required>
                             </div>
                         </div>
                     </div>

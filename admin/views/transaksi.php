@@ -29,17 +29,17 @@
                             
                             <label for="form-donatur">Donatur</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-nama" name="nama">
+                                <input class="form-control" type="text" id="form-nama" name="nama" required>
                             </div>
                             
                             <label for="form-email">Email</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-email" name="email">
+                                <input class="form-control" type="text" id="form-email" name="email" required>
                             </div>
 
                             <label for="form-no-hp">No HP</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-no-hp" name="no-hp">
+                                <input class="form-control" type="text" id="form-no-hp" name="no-hp" required>
                             </div>
 
                             <label for="form-model">Model Pembayaran</label>
@@ -53,7 +53,7 @@
 
                             <label for="form-jumlah">Jumlah</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-jumlah" name="jumlah">
+                                <input class="form-control" type="text" id="form-jumlah" name="jumlah" required>
                             </div>
                             
                             <label for="form-pesan">Pesan</label>
@@ -185,7 +185,7 @@
                                     <button class="btn btn-primary" id="show-msg-btn">Show</button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary" img='../<?= $transaction->get_bukti_transfer() ?>'
+                                    <button class="btn btn-primary" img="../<?= $transaction->get_bukti_transfer() ?>"
                                     id="show-img-btn">Show</button>
                                 </td>
                                 <td>

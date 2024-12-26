@@ -30,7 +30,13 @@ window.addEventListener('DOMContentLoaded', event => {
     // untuk menampilkan form add data
     document.getElementById("add-data-btn").addEventListener("click", () => add());
     // untuk submit form add data
-    document.getElementById("submit-button").addEventListener('click', process_submit_btn);
+    document.getElementById("submit-button").addEventListener('click', (e) => {
+        if (modal_form.checkValidity()){
+            process_submit_btn();
+        }else{
+            modal_form.reportValidity();
+        }
+    });
     // untuk menghapus semua yang di select/checkbox
     document.getElementById("delete-all-btn").addEventListener("click", (e) => delete_all_selected(e.target));
     // untuk menselect semua checkbox
