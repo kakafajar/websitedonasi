@@ -58,7 +58,7 @@
                     </button>
                     <h6 id="selected-counters">x25</h6>
                 </div>
-                <table id="datatable">
+                <table id="datatablehtml">
                     <thead>
                         <th>
                             <input class="form-check-input" type="checkbox" onclick="select_all_checkbox(this)">

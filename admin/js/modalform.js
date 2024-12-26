@@ -1,13 +1,11 @@
+var datatable;
 window.addEventListener('DOMContentLoaded', event => {
-    var datatableHtml = document.getElementById('datatable');
+    var datatableHtml = document.getElementById('datatablehtml');
     if (datatableHtml) {
-        var datatable = new simpleDatatables.DataTable(datatableHtml, {
-            columns : [
-                {
-                    select : 0,
-                    sortable : false    
-                }
-            ]
+        datatable = new DataTable('#datatablehtml', {
+            scrollX : true,
+            columnDefs: [{ orderable: false, targets: 0 }],
+            order : [[1, 'desc']]
         });
     }
 
