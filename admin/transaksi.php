@@ -35,17 +35,7 @@
     }
 
     $title = "Transaksi";
-    $transactions = [];
-    if (isset($_GET['from']) or isset($_GET['to'])){
-        echo "yes";
-        $from = isset($_GET['from']) ? $_GET['from'] : '';
-        $to = isset($_GET['to']) ? $_GET['to'] : '' ;
-        
-        $transactions = Transaksi::get_from_date_range($from, $to);
-    }
-    else{
-        $transactions = Transaksi::get_all();
-    }
+    $transactions = Transaksi::get_all();
     $models = ModelPembayaran::get_all();
     
     require_once __DIR__ . '/views/layout.php';

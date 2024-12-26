@@ -8,6 +8,7 @@
         background-image:linear-gradient(to top, rgba(167, 255, 214, 0.62), white);
     }
 </style>
+<link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.5.4/css/dataTables.dateTime.min.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="modal fade" tabindex="-1" id="modal">
     <div class="modal-dialog modal-dialog-centered">
@@ -125,20 +126,22 @@
                 
             </div>
             <div class="card-body">
-                <button class="btn btn-primary mb-3" onclick="add()">Add Data</button>
-                <form action="" method="get" class="mb-3">
-                    <div class="d-flex ">
-                        <div class="d-flex me-2 align-items-center">
-                            <label for="from">Dari</label>
-                            <input type="date" id="from" name="from" class="form-control" value="<?php echo  isset($_GET['from'])?$_GET['from']  : '' ?>">
-                        </div>
-                        <div class="d-flex me-2 align-items-center">
-                            <label for="to">Ke</label>
-                            <input type="date" id="to" name="to" class="form-control" value="<?php echo isset($_GET['to']) ? $_GET['to'] : '' ?>">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Filter</button>
+                <div class="d-flex mb-3">
+                    <button class="btn btn-primary" onclick="add()">Add Data</button>
+                    <button class="btn btn-secondary" onclick="exportCSV()">Export CSV</button>
+                </div>
+                <div class="d-flex ">
+                    <div class="d-flex me-2 align-items-center">
+                        <label for="from">Dari</label>
+                        <input type="text" id="from-date" class="form-control">
                     </div>
-                </form>
+                    <div class="d-flex me-2 align-items-center">
+                        <label for="to">Ke</label>
+                        <input type="text" id="to-date" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="refreshDatatable()">Filter</button>
+                    <button type="button" class="btn btn-primary" onclick="clearDates()">Clear</button>
+                </div>
                 <div class="mb-3 align-items-center" id="selected-options" style="display:none;">
                     <button class="btn btn-danger" onclick="delete_all_selected(this)">
                         <form action="?mode=deleteselected" method="post" style="display:none;">
@@ -149,7 +152,7 @@
                     <button class="btn btn-primary me-2" onclick="edit_status_selected()">Edit Status yang dipilih</button>
                     <h6 id="selected-counters">x25</h6>
                 </div>
-                <table id="datatable">
+                <table id="datatablehtml" class="table cell-border hover">
                     <thead>
                         <th>
                             <input class="form-check-input" type="checkbox" onclick="select_all_checkbox(this)">
@@ -177,7 +180,7 @@
                                 <td><?=$transaction->get_email()?></td>
                                 <td><?=$transaction->get_no_hp()?></td>
                                 <td>
-                                    <value style="display:none;"><?=$transaction->get_model()->get_id()?></value>
+                                    <value style="display:none;" forcsv="<?=$transaction->get_model()->get_nama()?>"><?=$transaction->get_model()->get_id()?></value>
                                     <a href="" onclick="search_on_table(this, '<?=$transaction->get_model()->get_id()?>', 'modelpembayaran.php')"><?=$transaction->get_model()->get_nama()?></a>
                                 </td>
                                 <td><?=$transaction->get_jumlah()?></td>
@@ -219,6 +222,8 @@
     </div>
 </section>
 <script src='js/modalform.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.5.4/js/dataTables.dateTime.min.js"></script>
 <script>
     const modal_other = new bootstrap.Modal('#modal-other', { keyboard:false});
     const modal_other_title = document.getElementById("modal-other-title");
@@ -227,6 +232,82 @@
     const bukti_transfer_img = document.getElementById("bukti-transfer-img");
     const pesan_content = document.getElementById("pesan-content");
     const status_in_other = document.getElementById("status-in-other");
+    
+    // Filter Tanggal
+    let from_date, to_date;
+
+    from_date = new DateTime("#from-date", {
+        format: "MMMM Do YYYY"
+    });
+
+    to_date = new DateTime("#to-date", {
+        format: "MMMM Do YYYY"
+    });
+
+    DataTable.ext.search.push(function (settings, data, dataIndex) {
+        let from = from_date.val();
+        let to = to_date.val();
+        let date = new Date(data[10].substr(0, 10));
+        
+        if (
+            (from === null && to === null) ||
+            (from === null && date <= to) ||
+            (from <= date && to === null) ||
+            (from <= date && date <= to)
+            
+        ){
+            return true;
+        }
+        return false;
+    });
+    
+    function clearDates(){
+        document.getElementById("from-date").value = "";
+        document.getElementById("to-date").value = "";
+        from_date.val("");
+        to_date.val("");
+
+        datatable.draw();
+    }
+    // Filter Tanggal End
+    
+    function exportCSV(){
+        var table = datatable.rows().nodes();
+
+        var csvContent = table.map(function(row) {
+            let filteredrow = [];
+            row.childNodes.forEach(col => {
+                // cek kalau kolom adalah td
+                if (col.tagName == "TD"){
+                    console.log(col.childNodes.length);
+                    
+                    // cek kalau anak kolom lebih dari satu
+                    if (col.childNodes.length < 2){
+                        filteredrow.push(col.innerText);
+                    }
+                    // cek kalau ada tag value dalam table column (untuk yang pake tombol show)
+                    else if (col.childNodes[1].tagName == "VALUE"){
+                        if (col.childNodes[1].hasAttribute('forcsv')){
+                            filteredrow.push(col.childNodes[1].getAttribute("forcsv"));
+                        } else{
+                            filteredrow.push(col.childNodes[1].innerText);
+                        }
+                    }
+                }
+            });
+            return filteredrow.join(',');
+        }).join('\n');
+
+        // buat link untuk didownload
+        var link = document.createElement('a');
+        link.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+        link.download = 'Transaksi.csv';
+        link.click();
+    }
+
+    function refreshDatatable(){
+        datatable.draw();
+    }
 
     function reset_modal_other(){
         modal_other_container.childNodes.forEach(element => {
