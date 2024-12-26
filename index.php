@@ -1,9 +1,8 @@
 <?php 
     $title = "";
 
-    if (isset($_POST['submit-message'])) {
+    if (isset($_POST['email'])) {
         require_once __DIR__ . '/phpmailer.php';
-        require_once __DIR__ . '/functions.php';
 
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);

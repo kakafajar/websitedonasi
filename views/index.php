@@ -199,7 +199,7 @@
       <p class="text-center text-secondary mb-5">Feel free to reach out for inquiries or support!</p>
       <div class="row">
         <div class="col-md-6">
-          <form action="" method="post">
+          <form action="" method="post" id="form-msg">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
@@ -212,7 +212,7 @@
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" id="message" name="message" rows="3" placeholder="Your Message"></textarea>
             </div>
-            <button type="submit" name="submit-message" class="btn" style="background-color: #28a745; color:#fff;">Send Message</button>
+            <button type="button" id="submit-btn" name="submit-message" class="btn" style="background-color: #28a745; color:#fff;">Send Message</button>
           </form>
         </div>
         <div class="col-md-6">
@@ -231,3 +231,4 @@
     </div>
   </section>
 </section>
+<script src="views/js/index.js"></script>
