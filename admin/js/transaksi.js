@@ -136,7 +136,7 @@ window.addEventListener("DOMContentLoaded", event => {
     // Filter Tanggal End
 
     function exportCSV(){
-        var table = datatable.rows().nodes();
+        var table = datatable.rows({search: 'applied'}).nodes();
 
         var csvContent = table.map(function(row) {
             let filteredrow = [];
