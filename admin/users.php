@@ -35,7 +35,7 @@
                     echo json_encode($conn->error);
                 }
                 break;
-            case 'deleteselected':
+            case 'delete_all_selected':
                 try{
                     User::delete_from_array(json_decode($_POST['ids']));
                 }
@@ -43,6 +43,10 @@
                     http_response_code(500);
                     echo json_encode($conn->error);
                 }
+                break;
+            default:
+                http_response_code(404);
+                echo $_GET['mode'] . " does not exist!";
                 break;
         }
         exit;
