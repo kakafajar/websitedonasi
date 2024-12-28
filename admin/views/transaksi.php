@@ -34,7 +34,7 @@
                             
                             <label for="form-email">Email</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-email" name="email" required>
+                                <input class="form-control" type="email" id="form-email" name="email" required>
                             </div>
 
                             <label for="form-no-hp">No HP</label>
@@ -53,7 +53,7 @@
 
                             <label for="form-jumlah">Jumlah</label>
                             <div class="col">
-                                <input class="form-control" type="text" id="form-jumlah" name="jumlah" required>
+                                <input class="form-control" type="number" id="form-jumlah" name="jumlah" required>
                             </div>
                             
                             <label for="form-pesan">Pesan</label>
