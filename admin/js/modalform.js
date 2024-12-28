@@ -92,36 +92,28 @@ window.addEventListener('DOMContentLoaded', event => {
         // mengambil tr, button adalah button edit didalam baris/tr
         // mengapa parent elementnya dua kali?, karena button ada didalam td
         let row = button.parentElement.parentElement;
-        // input index agar menskip text didalam anak tag html
-        // struktur anak html => text, tag yang mau kita dapatkan, text
-        // lalu diisi dengan 1 untuk menskip tombol close di modal
-        let inputIndex = 1;
-        
+
         // fungsi dari loop ini adalah untuk mengambil data dari tabel, lalu masukan ke
         // input form.
-        for (let index = 0; index < modal_form.elements.length; index++) {
+        // length - 2 untuk menskip tombol close dan save changes
+        for (let index = 1; index < modal_form.elements.length - 2; index++) {
             // mengambil input
-            const input = modal_form.elements[inputIndex];
-            // ditambah 2 untuk menskip text dan checkbox
-            const tableColumn = row.childNodes[index+2];
-            
+            const input = modal_form.elements[index];
+            // dikali 2 untuk mendapatkan kolom dari table (selisih 2 karna ada #text)
+            // ditambah satu untuk menskip
+            const tableColumn = row.childNodes[(index*2)+1];
+            // console.log(tableColumn);
             // cek kalau kolom adalah td, bukan text
             if (tableColumn.tagName == "TD"){
-                // kalau iya maka tambahkan input index satu agar
-                // lanjut ke input selanjutnya
-                inputIndex += 1;
-
-                // cek kalau input adalah select atau text area, jika iya
-                // maka ambil data dari anak tag value (childnodes[1]) lalu masukan ke input
-                if (input.tagName == "SELECT" || input.tagName == "TEXTAREA"){
-                    input.value = tableColumn.childNodes[1].innerHTML;
+                // jika mempunyai tag value, maka dapatkan nilai dari tag value
+                // jika tidak, maka langsung dapatkan dari td
+                
+                if (tableColumn.childNodes.length > 2 && tableColumn.childNodes[1].tagName == "VALUE"){
+                    input.value = tableColumn.childNodes[1].innerText;
+                }else{
+                    input.value = tableColumn.innerText;
                 }
-                // jika bukan, maka langsung ambil data dari kolom.
-                else if (input.tagName == "INPUT"){
-                    if (input.type != "file"){
-                        input.value = tableColumn.innerHTML;
-                    }
-                }
+                
             }
         }
         

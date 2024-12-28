@@ -61,8 +61,8 @@
                                 <textarea class="form-control" name="pesan" id="form-pesan"></textarea>
                             </div>
                             
-                            <label for="form-bukti">Bukti Transfer</label>
-                            <div class="col">
+                            <label style="display:none;" for="form-bukti">Bukti Transfer</label>
+                            <div style="display:none;" class="col">
                                 <input class="form-control" type="file" id="form-bukti" name="bukti">
                             </div>
                             
@@ -177,31 +177,37 @@
                                 <td><?=$transaction->get_no_hp()?></td>
                                 <td>
                                     <value style="display:none;" forcsv="<?=$transaction->get_model()->get_nama()?>"><?=$transaction->get_model()->get_id()?></value>
-                                    <a href="" onclick="search_on_table(this, '<?=$transaction->get_model()->get_id()?>', 'modelpembayaran.php')"><?=$transaction->get_model()->get_nama()?></a>
+                                    <?php if ($transaction->get_model()->get_is_deleted() == 0) : ?>
+                                        <a href="" onclick="search_on_table(this, '<?=$transaction->get_model()->get_id()?>', 'modelpembayaran.php')"><?=$transaction->get_model()->get_nama()?></a>
+                                    <?php else: ?>
+                                        <p><?=$transaction->get_model()->get_nama()?></p>
+                                    <?php endif ?>
                                 </td>
-                                <td><?=$transaction->get_jumlah()?></td>
+                                <td>
+                                    <value style="display:none;"><?=$transaction->get_jumlah()?></value>
+                                    Rp.<?= number_format($transaction->get_jumlah(), 2, ".", ",") ?>
+                                </td>
                                 <td>
                                     <value style="display:none;"><?=$transaction->get_pesan()?></value>
                                     <button class="btn btn-primary" id="show-msg-btn">Show</button>
                                 </td>
                                 <td>
+                                    <value forcsv="image"></value>
                                     <button class="btn btn-primary" img="../<?= $transaction->get_bukti_transfer() ?>"
                                     id="show-img-btn">Show</button>
                                 </td>
                                 <td>
-                                    <!-- class untuk menambahkan warna -->
-                                    <value class="
-                                        <?php if ($transaction->get_status() == 'pending') {?>
+                                    <value class="<?php if ($transaction->get_status() == 'pending') {?>
                                             row-pending
                                         <?php } else { ?>
                                             row-confirmed
                                         <?php } ?>
-                                    "><?=$transaction->get_status()?></value>
+                                    " forcsv="<?=$transaction->get_status()?>"><?=$transaction->get_status()?></value>
                                 </td>
                                 <td><?=$transaction->get_tanggal()?></td>
                                 <td>
                                     <button class="btn btn-primary" id="edit-data-btn">Edit</button>
-                                    <button class="btn btn-danger" id="delete-data-btn" href="?mode=delete&id=<?=$transaction->get_id()?>">Hapus</button>
+                                    <button class="btn btn-danger" id="delete-data-btn"data-id="<?=$transaction->get_id()?>">Hapus</button>
                                 </td>
                             </tr>
                         <?php } ?>
