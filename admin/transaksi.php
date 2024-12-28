@@ -73,7 +73,7 @@
 
     $title = "Transaksi";
     $transactions = Transaksi::get_all();
-    $models = ModelPembayaran::get_all();
+    $models = ModelPembayaran::get_all_active();
     
     require_once __DIR__ . '/views/layout.php';
     require_once __DIR__ . '/views/transaksi.php';

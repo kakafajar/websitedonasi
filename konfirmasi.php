@@ -4,7 +4,6 @@
 
     $transaksi;
     try{
-        
         $transaksi_id = openssl_decrypt($_GET['transaksi_id'], "AES-128-ECB", "A");
         
         $transaksi = Transaksi::get($transaksi_id);
@@ -35,12 +34,6 @@
 
     $title = "Konfirmasi";
 
-    if ($transaksi->get_bukti_transfer() != ""){
-        header("Location:donasi.php");
-        exit;
-    }
-
-    
     require_once 'views/layout.php';
     require_once 'views/konfirmasi.php';
 

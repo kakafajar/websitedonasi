@@ -9,7 +9,9 @@ window.addEventListener("DOMContentLoaded", event => {
     const status_in_other = document.getElementById("status-in-other");
 
     document.getElementById("export-csv-btn").addEventListener("click", () => exportCSV());
-    document.getElementById("submit-form-status-btn").addEventListener("click", () => process_edit_status())
+    document.getElementById("submit-form-status-btn").addEventListener("click", () => {
+        process_edit_status()
+    });
     document.getElementById("filter-date-btn").addEventListener("click", () => {
         datatable.draw();
     })
@@ -141,9 +143,7 @@ window.addEventListener("DOMContentLoaded", event => {
             row.childNodes.forEach(col => {
                 // cek kalau kolom adalah td
                 if (col.tagName == "TD"){
-                    console.log(col.childNodes.length);
-                    
-                    // cek kalau anak kolom lebih dari satu
+                    // cek kalau anak kolom kurang dari satu, (untuk yang gk pake tag value)
                     if (col.childNodes.length < 2){
                         filteredrow.push(col.innerText);
                     }
@@ -158,7 +158,16 @@ window.addEventListener("DOMContentLoaded", event => {
                 }
             });
             return filteredrow.join(',');
-        }).join('\n');
+        });
+
+        // menambahkan nama header
+        let headers = table.columns().header().map(d => d.textContent).toArray();
+        // menghapus header checkbox
+        headers.shift();
+        // menghapus header aksi
+        headers.pop()
+        csvContent.unshift(headers);
+        csvContent = csvContent.join('\n');
 
         // buat link untuk didownload
         var link = document.createElement('a');

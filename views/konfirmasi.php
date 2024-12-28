@@ -1,3 +1,13 @@
+<?php if ($transaksi->get_bukti_transfer() != "") : ?>
+    <script>
+        swal({
+            title : "Bukti telah dikirim",
+            icon : "warning"
+        }).then(()=>{
+            window.location.href = "donasi.php";
+        });
+    </script>
+<?php endif?>
 <style>
     div.has(.row-box) {
         overflow: auto;
