@@ -6,7 +6,7 @@
         switch ($_GET['mode']){
             case 'add':
                 try{
-                    ModelPembayaran::insert([$_POST['nama'], $_POST['keterangan']]);
+                    ModelPembayaran::insert([$_POST['nama'], $_POST['keterangan'], null]);
                 }
                 catch(Exception $e){
                     http_response_code(500);
@@ -15,7 +15,7 @@
                 break;
             case 'edit':
                 try{
-                    ModelPembayaran::update($_POST['id'], [$_POST['nama'], $_POST['keterangan']]);
+                    ModelPembayaran::update($_POST['id'], [$_POST['nama'], $_POST['keterangan'], null]);
                 }
                 catch(Exception $e){
                     http_response_code(500);
@@ -24,14 +24,14 @@
                 break;
             case 'delete':
                 try{
-                    ModelPembayaran::delete($_GET['id']);
+                    ModelPembayaran::delete_safe($_GET['id']);
                 }
                 catch(Exception $e){
                     http_response_code(500);
                     echo json_encode($conn->error);
                 }
                 break;
-            case 'deleteselected':
+            case 'delete_all_selected':
                 try{
                     ModelPembayaran::delete_from_array(json_decode($_POST['ids']));
                 }
@@ -40,12 +40,16 @@
                     echo json_encode($conn->error);
                 }
                 break;
+            default:
+                http_response_code(404);
+                echo $_GET['mode'] . " does not exist!";
+                break;
         }
         exit;
     }
 
     $title = "Model Pembayaran";
-    $models = ModelPembayaran::get_all();
+    $models = ModelPembayaran::get_all_active();
 
 
     require_once __DIR__ . '/views/layout.php';

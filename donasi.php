@@ -62,7 +62,7 @@ if (isset($_POST['email'])) {
   exit;
 }
 
-$models = ModelPembayaran::get_all();
+$models = ModelPembayaran::get_all_active();
 
 require_once "views/layout.php";
 require_once "views/donasi.php";
