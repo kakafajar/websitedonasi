@@ -55,7 +55,7 @@
                     </button>
                     <h6 id="selected-counters">x25</h6>
                 </div>
-                <table id="datatablehtml">
+                <table id="datatablehtml" class="table cell-border hover">
                     <thead>
                         <th>
                             <input class="form-check-input" type="checkbox" id="all-data-checkbox">
