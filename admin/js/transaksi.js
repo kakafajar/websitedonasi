@@ -149,15 +149,17 @@ window.addEventListener("DOMContentLoaded", event => {
                     }
                     // cek kalau ada tag value dalam table column (untuk yang pake tombol show)
                     else if (col.childNodes[1].tagName == "VALUE"){
+                        data = "";
                         if (col.childNodes[1].hasAttribute('forcsv')){
-                            filteredrow.push(col.childNodes[1].getAttribute("forcsv"));
+                            data = String(col.childNodes[1].getAttribute("forcsv"));
                         } else{
-                            filteredrow.push(col.childNodes[1].innerText);
+                            data = String(col.childNodes[1].innerText);
                         }
+                        filteredrow.push(data);
                     }
                 }
             });
-            return filteredrow.join(',');
+            return filteredrow.join(';');
         });
 
         // menambahkan nama header
@@ -165,8 +167,8 @@ window.addEventListener("DOMContentLoaded", event => {
         // menghapus header checkbox
         headers.shift();
         // menghapus header aksi
-        headers.pop()
-        csvContent.unshift(headers);
+        headers.pop();
+        csvContent.unshift(headers.join(';'));
         csvContent = csvContent.join('\n');
 
         // buat link untuk didownload
