@@ -76,7 +76,7 @@
                             
                             <label for="form-tanggal">Tanggal</label>
                             <div class="col">
-                                <input class="form-control" type="datetime-local" id="form-tanggal" name="tanggal">
+                                <input class="form-control" type="datetime-local" id="form-tanggal" name="tanggal" step="1">
                             </div>
                         </div>
                     </div>
