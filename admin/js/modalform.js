@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // datatable end
     
     // untuk menampilkan form add data
-    document.getElementById("add-data-btn").addEventListener("click", () => add());
+    document.getElementById("add-data-btn").addEventListener("click", add);
     // untuk submit form add data
     document.getElementById("submit-button").addEventListener('click', (e) => {
         if (modal_form.checkValidity()){
@@ -41,19 +41,42 @@ window.addEventListener('DOMContentLoaded', event => {
     document.getElementById("delete-all-btn").addEventListener("click", (e) => delete_all_selected(e.target));
     // untuk menselect semua checkbox
     document.getElementById("all-data-checkbox").addEventListener("click", (e) => select_all_checkbox(e.target));
-    
-    // untuk mengedit baris di tabel
-    document.querySelectorAll("#edit-data-btn").forEach((e) => {
-        e.addEventListener("click", (event) => edit(event.target));
-    });
-    // untuk menghapus baris di tabel
-    document.querySelectorAll("#delete-data-btn").forEach((e) => {
-        e.addEventListener("click", (event) => process_delete(event.target));
-    });
-    // untuk menselect checkbox di tabel
-    document.querySelectorAll("#data-checkbox").forEach((e) => {
-        e.addEventListener("click", (event) => select_checkbox(event.target, event.target.getAttribute('data-id')));
-    })
+
+    // untuk menyimpan baris apa saja yang sudah ditambahkan event listener
+    let refreshed_row = [];
+    // agar baris baru yang ada di halaman lain, mendapatkan event edit, delete, dan checkbox
+    datatable.on("draw", refresh_datatable_controls);
+
+    function refresh_datatable_controls(){
+        // jika add_event false, maka tidak akan menambahkan event listener
+        let add_event = false;
+
+        // untuk menselect checkbox di tabel
+        document.querySelectorAll("#data-checkbox").forEach((e) => {
+            if (refreshed_row.indexOf(e.getAttribute('data-id')) == -1){
+                refreshed_row.push(e.getAttribute('data-id'));
+                add_event = true
+            }
+
+            if (add_event){
+                e.addEventListener("click", () => select_checkbox(e, e.getAttribute('data-id')));
+            }
+        });
+        // untuk mengedit baris di tabel
+        document.querySelectorAll("#edit-data-btn").forEach((e) => {
+            if (add_event){
+                e.addEventListener("click", () => edit(e));
+            }
+        });
+        // untuk menghapus baris di tabel
+        document.querySelectorAll("#delete-data-btn").forEach((e) => {
+            if (add_event){
+                e.addEventListener("click", () => process_delete(e));
+            }
+        });
+    }
+
+    refresh_datatable_controls();
     
     // submit mode dipake untuk tau prosesnya ke swal atau langsung submit form
     // kalau submit berarti langsung submit
