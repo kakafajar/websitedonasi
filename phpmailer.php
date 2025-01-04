@@ -17,8 +17,19 @@ function get_phpmailer(){
     $mail = new PHPMailer(true);
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->Host = "ssl://smtp.gmail.com";
-    $mail->Port = 465;
+    $mail->SMTPSecure = 'tls';
+    
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 587;
+    
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+
     $mail->Username = $smtp_username;
     $mail->Password = $smtp_password;
 
