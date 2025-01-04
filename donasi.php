@@ -23,8 +23,8 @@ if (isset($_POST['email'])) {
   Transaksi::insert([$nama, $email, $no_hp, $idmodel, $jumlah, $pesan, null, 'pending', date("Y-m-d H-i-s")]);
   $transaksi = Transaksi::get($conn->insert_id);
 
+  $mail = get_phpmailer();
   try {
-    $mail = get_phpmailer();
 
     $mail->setFrom($phpmailer_from);
     $mail->addAddress($email);
@@ -38,7 +38,7 @@ if (isset($_POST['email'])) {
     // Append the host(domain name, ip) to the URL.   
     $link.= $_SERVER['HTTP_HOST'];   
     // Append the requested resource location to the URL   
-    $link .= "/websitedonasi/konfirmasi.php?transaksi_id=" . urlencode(openssl_encrypt($transaksi->get_id(), "AES-128-ECB", "A"));
+    $link .= "/konfirmasi.php?transaksi_id=" . urlencode(openssl_encrypt($transaksi->get_id(), "AES-128-ECB", "A"));
     
     $jumlah = number_format($transaksi->get_jumlah(), 2, ',', '.');
     $mail->msgHTML(strtr(file_get_contents('views/emaildata.html'), array(
@@ -56,7 +56,7 @@ if (isset($_POST['email'])) {
     echo json_encode($link);
   } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode($e);
+    echo json_encode($mail->ErrorInfo);
     Transaksi::delete($transaksi->get_id());
   }
   exit;
