@@ -76,7 +76,7 @@
                             
                             <label for="form-tanggal">Tanggal</label>
                             <div class="col">
-                                <input class="form-control" type="datetime-local" id="form-tanggal" name="tanggal">
+                                <input class="form-control" type="datetime-local" id="form-tanggal" name="tanggal" step="1">
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                                     <?php endif ?>
                                 </td>
                                 <td>
-                                    <value style="display:none;"><?=$transaction->get_jumlah()?></value>
+                                    <value style="display:none;" forcsv="<?= number_format($transaction->get_jumlah(), 2, ".", ",") ?>"><?=$transaction->get_jumlah()?></value>
                                     Rp.<?= number_format($transaction->get_jumlah(), 2, ".", ",") ?>
                                 </td>
                                 <td>
