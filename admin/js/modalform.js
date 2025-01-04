@@ -74,6 +74,23 @@ window.addEventListener('DOMContentLoaded', event => {
                 e.addEventListener("click", () => process_delete(e));
             }
         });
+
+        refresh_select_all_checkbox(document.getElementById("all-data-checkbox"));
+    }
+
+    function refresh_select_all_checkbox(tag){
+        // ambil semua checkbox
+        let all_checkboxes = Array.from(document.querySelectorAll("#data-checkbox"));
+        
+        // cek jika semua checkbox itu di centang
+        tag.checked = true;
+        all_checkboxes.forEach(element => {
+            // logikanya adalah jika salah satu checkbox tidak di centang,
+            //  maka semua tidak di centang
+            if (element.checked == false){
+                tag.checked = false;
+            }
+        });
     }
 
     refresh_datatable_controls();
@@ -280,4 +297,6 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     }
+
+    
 });
