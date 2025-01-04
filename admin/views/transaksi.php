@@ -184,7 +184,7 @@
                                     <?php endif ?>
                                 </td>
                                 <td>
-                                    <value style="display:none;"><?=$transaction->get_jumlah()?></value>
+                                    <value style="display:none;" forcsv="<?= number_format($transaction->get_jumlah(), 2, ".", ",") ?>"><?=$transaction->get_jumlah()?></value>
                                     Rp.<?= number_format($transaction->get_jumlah(), 2, ".", ",") ?>
                                 </td>
                                 <td>
