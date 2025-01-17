@@ -17,7 +17,7 @@
                 exit;
             }
         }
-        $errormsg = "salah";
+        $errormsg = "username atau password salah!";
     }
 
 

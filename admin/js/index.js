@@ -18,6 +18,17 @@ const chart_uang_bulan = new Chart(ctx_uang_bulan, {
             borderColor: "rgba(2,117,216,1)",
             data: [],
         }],
+    },
+    options : {
+        scales : {
+            yAxes : [{
+                display : true,
+                ticks : {
+                    beginAtZero: true,
+                    suggestedMin : 0
+                }
+            }]
+        }
     }
 });
 
@@ -31,6 +42,17 @@ const chart_uang_tahun = new Chart(ctx_uang_tahun, {
             borderColor: "rgba(2,117,216,1)",
             data: [],
         }],
+    },
+    options : {
+        scales : {
+            yAxes : [{
+                display : true,
+                ticks : {
+                    beginAtZero: true,
+                    suggestedMin : 0
+                }
+            }]
+        }
     }
 });
 
